@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Unity3D中的一些技巧总结 | iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unity3D中的一些技巧总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity3D中的一些技巧总结">
+<meta property="og:url" content="https://iningwei.github.io/2016/03/06/Unity3D中的一些技巧总结/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="Unity3D中的一些技巧总结">
+<meta property="og:updated_time" content="2016-03-06T14:45:29.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity3D中的一些技巧总结">
+<meta name="twitter:description" content="Unity3D中的一些技巧总结">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-Unity3D中的一些技巧总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unity3D中的一些技巧总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下tip来源于网络（unity wiki、unity fb、unity Twitter等）  </p>
+<h1 id="1："><a href="#1：" class="headerlink" title="1："></a>1：</h1><p>When you’re using Debug.Log or related methods, provide the instance of the script so you can click the log output and have the relevant object selected in editor! Debug.Log(“Test”, this);  </p>
+<h1 id="2："><a href="#2：" class="headerlink" title="2："></a>2：</h1><p>To remember which color means what on an axis in Unity, just remember the mnemonic: RGB = XYZ.</p>
+<h1 id="3：Draw-editor-gui’s-only-in-active-scene-view"><a href="#3：Draw-editor-gui’s-only-in-active-scene-view" class="headerlink" title="3：Draw editor gui’s only in active scene view"></a>3：Draw editor gui’s only in active scene view</h1><p>If you are creating custom editors for unity but only want the gui for that editor to be drawn in the currently active scene view try this …  </p>
+<pre><code>if (SceneView.mouseOverWindow.GetInstanceID() == SceneView.currentDrawingSceneView.GetInstanceID())
+{
+    this.DrawGUI(SceneView.currentDrawingSceneView);
+}
+</code></pre><h1 id="4：Execute-menu-items-from-editor-script"><a href="#4：Execute-menu-items-from-editor-script" class="headerlink" title="4：Execute menu items from editor script"></a>4：Execute menu items from editor script</h1><p>If you want to take advantage of functionality that is provided by menu commands you can useEditorApplication.ExecuteMenuItem in your editor scripts to execute them.</p>
+<h1 id="5：Screen-Resolution"><a href="#5：Screen-Resolution" class="headerlink" title="5：Screen Resolution"></a>5：Screen Resolution</h1><p>If you need to set the screen resolution of your game via scripting check out Screen.SetResolution.</p>
+<h1 id="6：Collider-manipulation"><a href="#6：Collider-manipulation" class="headerlink" title="6：Collider manipulation"></a>6：Collider manipulation</h1><p>Did you know that you can manipulate a game objects collider in the scene view by holding down the ‘Shift’ key. Holding shift will display the colliders control dots. Just drag the dots to adjust the collider!</p>
+<h1 id="7：Running-Editor-Script-Code-on-Launch"><a href="#7：Running-Editor-Script-Code-on-Launch" class="headerlink" title="7：Running Editor Script Code on Launch"></a>7：Running Editor Script Code on Launch</h1><p>If you need to run some script code as soon as the editor has launched you can use the InitializeOnLoad attribute.</p>
+<h1 id="8：各平台下的log文件"><a href="#8：各平台下的log文件" class="headerlink" title="8：各平台下的log文件"></a>8：各平台下的log文件</h1><p><a href="http://docs.unity3d.com/Manual/LogFiles.html" target="_blank" rel="external">http://docs.unity3d.com/Manual/LogFiles.html</a></p>
+<h1 id="9：unity的命令行参数"><a href="#9：unity的命令行参数" class="headerlink" title="9：unity的命令行参数"></a>9：unity的命令行参数</h1><p><a href="http://docs.unity3d.com/Manual/CommandLineArguments.html" target="_blank" rel="external">http://docs.unity3d.com/Manual/CommandLineArguments.html</a></p>
+<h1 id="11：Can-you-hear-me-now"><a href="#11：Can-you-hear-me-now" class="headerlink" title="11：Can you hear me now?"></a>11：Can you hear me now?</h1><p>Unity provides access to the users microphone via the Microphone class.<br><a href="http://docs.unity3d.com/ScriptReference/Microphone.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/Microphone.html</a></p>
+<h1 id="12：Location-awareness"><a href="#12：Location-awareness" class="headerlink" title="12：Location awareness"></a>12：Location awareness</h1><p>Unity provides support for location awareness such as longitude, latitude, and altitude in the LocationService class.<br><a href="http://docs.unity3d.com/ScriptReference/LocationService.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/LocationService.html</a></p>
+<h1 id="13：Social-Platforms"><a href="#13：Social-Platforms" class="headerlink" title="13：Social Platforms"></a>13：Social Platforms</h1><p>Unity provides built in support for various social platforms including support for custom implementations through the Social class.<br><a href="http://docs.unity3d.com/ScriptReference/Social.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/Social.html</a></p>
+<h1 id="14：Gyroscopes"><a href="#14：Gyroscopes" class="headerlink" title="14：Gyroscopes"></a>14：Gyroscopes</h1><p>If the device supports it you can use the Gyroscope class to get gyroscopic information about the orientation and acceleration of the device.<br><a href="http://docs.unity3d.com/ScriptReference/Gyroscope.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/Gyroscope.html</a></p>
+<h1 id="15-EditorApplication"><a href="#15-EditorApplication" class="headerlink" title="15:EditorApplication"></a>15:EditorApplication</h1><p><a href="http://docs.unity3d.com/ScriptReference/EditorApplication.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/EditorApplication.html</a><br>场景的保存、新建、暂停等等用script模拟Editor相关操作</p>
+<h1 id="16-MeshUtility-Optimize"><a href="#16-MeshUtility-Optimize" class="headerlink" title="16:MeshUtility.Optimize"></a>16:MeshUtility.Optimize</h1><p>程序生成的mesh可以用这个做优化</p>
+<p><a href="http://docs.unity3d.com/ScriptReference/MeshUtility.Optimize.html" target="_blank" rel="external">http://docs.unity3d.com/ScriptReference/MeshUtility.Optimize.html</a></p>
+<h1 id="17-UI渐变效果"><a href="#17-UI渐变效果" class="headerlink" title="17:UI渐变效果"></a>17:UI渐变效果</h1><p><a href="http://pastebin.com/dJabCfWn" target="_blank" rel="external">http://pastebin.com/dJabCfWn</a></p>
+<pre><code>using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+
+[AddComponentMenu(&quot;UI/Effects/Gradient&quot;)]
+public class Gradient : BaseVertexEffect {
+[SerializeField]
+private Color32 topColor = Color.white;
+[SerializeField]
+private Color32 bottomColor = Color.black;
+
+public override void ModifyVertices(List&lt;UIVertex&gt; vertexList) {
+    if (!IsActive()) {
+        return;
+    }
+
+    int count = vertexList.Count;
+    float bottomY = vertexList[0].position.y;
+    float topY = vertexList[0].position.y;
+
+    for (int i = 1; i &lt; count; i++) {
+        float y = vertexList[i].position.y;
+        if (y &gt; topY) {
+            topY = y;
+        }
+        else if (y &lt; bottomY) {
+            bottomY = y;
+        }
+    }
+
+    float uiElementHeight = topY - bottomY;
+
+    for (int i = 0; i &lt; count; i++) {
+        UIVertex uiVertex = vertexList[i];
+        uiVertex.color = Color32.Lerp(bottomColor, topColor, (uiVertex.position.y - bottomY) / uiElementHeight);
+        vertexList[i] = uiVertex;
+    }
+}
+}
+</code></pre><h1 id="18-AABB碰撞检测"><a href="#18-AABB碰撞检测" class="headerlink" title="18:AABB碰撞检测"></a>18:AABB碰撞检测</h1><p><a href="http://pastebin.com/BCEgZxSf" target="_blank" rel="external">http://pastebin.com/BCEgZxSf</a></p>
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public static class Aabb
+
+{
+
+public static bool Colliding( GameObject a, GameObject b )
+{
+    Rect aBox = a.BoxToRect();
+    Rect bBox = b.BoxToRect();
+
+    // Find out if these guys intersect
+    return Intersect ( aBox, bBox );
+}
+
+// This checks the intersection between two rectangles.
+public static bool Intersect( Rect a, Rect b ) 
+{
+    // Basic AABB collision detection. All of these must be true for there to be a collision.
+    bool comp1 = a.yMin &gt; b.yMax;
+    bool comp2 = a.yMax &lt; b.yMin;
+    bool comp3 = a.xMin &lt; b.xMax;
+    bool comp4 = a.xMax &gt; b.xMin;
+
+    // This will only return true if all are true.
+    return comp1 &amp;&amp; comp2 &amp;&amp; comp3 &amp;&amp; comp4;
+}
+
+// This converts a BoxCollider2D to a rectangle for use in determining an intersection
+private static Rect BoxToRect ( this GameObject a )
+{
+    // Finding the BoxCollider2D for the GameObject.
+    BoxCollider2D aCollider = a.GetComponent&lt;BoxCollider2D&gt; ();
+
+    // Grabbing the GameObject position, converting it to Vector2.
+    Vector2 aPos = a.transform.position.V2();
+
+    // Now that we have the object&apos;s worldspace location, we offset that to the BoxCollider&apos;s center
+    aPos += aCollider.center;
+    // From the center, we find the top/left corner by cutting the total height/width in half and 
+    // offset by that much
+    aPos.x -= aCollider.size.x/2;
+    aPos.y += aCollider.size.y/2;
+
+    // Create a rectangle based on the top/left corner, and extending the rectangle 
+    // to the width/height
+    return new Rect ( aPos.x, aPos.y, aCollider.size.x, -aCollider.size.y );
+}
+
+// Converts a Vector 3 to Vector 2
+private static Vector2 V2 ( this Vector3 v ) 
+{
+    // Converts the Vector3 to a Vector2.
+    return new Vector2 (v.x, v.y);
+}
+
+}
+</code></pre><h1 id="19：Weapon-Sway-Unity3D"><a href="#19：Weapon-Sway-Unity3D" class="headerlink" title="19：Weapon Sway Unity3D"></a>19：Weapon Sway Unity3D</h1><p><a href="http://pastebin.com/p5XagGuy" target="_blank" rel="external">http://pastebin.com/p5XagGuy</a></p>
+<pre><code>//============================================
+// ATTACH THIS TO WEAPON
+//
+// ATTACH WEAPON TO PLAYER GAMEOBJECT
+//============================================
+
+using UnityEngine;
+using System.Collections;
+
+public class WeaponSwayScript : MonoBehaviour {
+public float mouseSensitivity = 10f;
+public float maxMoveAmount = 0.5f;
+public float smoothSpeed = 3f;
+
+private Vector3 startPos;
+
+private float factorX;
+private float factorY;
+
+public bool bRotate;
+public float smoothRotationSpeed = 2f;
+public float rotateAmount = 45f;
+
+//============================================
+// FUNCTIONS
+//============================================
+
+void Start()
+{
+    startPos = transform.localPosition;
+}
+
+void Update()
+{
+    // STORE MOUSE MOVEMENT AMOUNTS, SMOOTH WITH LERP
+    factorX = Mathf.Lerp(factorX, -Input.GetAxis(&quot;Mouse X&quot;) * mouseSensitivity, Time.deltaTime * 10f);
+    factorY = Mathf.Lerp(factorY, -Input.GetAxis(&quot;Mouse Y&quot;) * mouseSensitivity, Time.deltaTime * 10f);
+
+    // CLAMP LIMITS
+    if (factorX &gt; maxMoveAmount)
+        factorX = maxMoveAmount;
+
+    if (factorX &lt; -maxMoveAmount)
+        factorX = -maxMoveAmount;
+
+    if (factorY &gt; maxMoveAmount)
+        factorY = maxMoveAmount;
+
+    if (factorY &lt; -maxMoveAmount)
+        factorY = -maxMoveAmount;
+
+    // SET TARGET POSITION (START POSITION + MOUSE MOVEMENT)
+    Vector3 targetPos = new Vector3(startPos.x + factorX, startPos.y + factorY, startPos.z);
+
+    // APPLY POSITION TO WEAPON, SMOOTH WITH LERP
+    transform.localPosition = Vector3.Lerp(transform.localPosition, targetPos, smoothSpeed * Time.deltaTime);
+
+    // ROTATION
+    if (bRotate)
+    {
+        float tiltAroundZ = Input.GetAxis(&quot;Mouse X&quot;) * rotateAmount;
+        float tiltAroundX = Input.GetAxis(&quot;Mouse Y&quot;) * rotateAmount;
+        Vector3 target = new Vector3(tiltAroundX, 0f, tiltAroundZ);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(target), Time.deltaTime * smoothRotationSpeed);
+    }
+}
+}
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/06/Unity3D中的一些技巧总结/" class="archive-article-date">
+  	<time datetime="2016-03-06T14:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-06</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/06/MemoryPool/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MemoryPool
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/06/DES加密/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DES加密</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

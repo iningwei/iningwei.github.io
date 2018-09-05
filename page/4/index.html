@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="测试description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iningwei的私家宅院">
+<meta property="og:url" content="https://iningwei.github.io/page/4/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="测试description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iningwei的私家宅院">
+<meta name="twitter:description" content="测试description">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        
+  
+    <article id="post-Unity3D通过反射实现安卓的代码热更新" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/16/Unity3D通过反射实现安卓的代码热更新/">Unity3D通过反射实现安卓的代码热更新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"><a href="#本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。" class="headerlink" title="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"></a>本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。</h2><h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>Unity3D 5.0之后API中取消了AddComponent(“”)，因此若要使用string来获得对应的Type，可以使用Type.GetType(“”)。注意目前（2015-09-16）GetComponent(“”)仍然保留。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>采用官方XData方式的热更新方案。<br>游戏中的代码分为以下几类： </p>
+<ul>
+<li><p>1：Support<br>用于游戏框架代码的编写，如：文件的读写、UI页面的开关、资源更新、逻辑热更assetbundle的更新等等。</p>
+</li>
+<li><p>2：XData<br>用于和逻辑代码通信，通常XData代码会挂载在具体的obj上，在XData中通常会声明public的gameobject，实现对游戏内部物体的引用。</p>
+</li>
+<li><p>3：逻辑热更代码<br>和XData脚本一一对应，通过反射的方式加载到gameobject上，另外通过获得XData中的public gameobject来实现逻辑代码的编写。 </p>
+</li>
+</ul>
+<p>一般Support代码不需要热更，不过如果要热更的话，Support还需要分为SupportLogic和XDataSupport，本文以不需要热更为例。 </p>
+<p>support代码中提供editor模式和发布模式两种方式，保证editor模式下不需要检查逻辑代码的dll是否最新，可以直接运行工程和调试。</p>
+<p>对于发布模式，发布的时候需要新建VS类库（建议.NET3.5），引用工程build出的Assembly-CSharp这个dll, build（建议Release模式下Build）后生成XXXXX.dll,建议后面加上新后缀.bytes,这样Unity会把它识别为AssetText,然后打包成assetbundle。</p>
+<p>首次启动手机的时候把assetbundle解压到persistantDataPath下，然后通过本地注册表内的版本号和服务器上版本号比对，确定是否需要下载服务器上的assetbundle。然后WWW读取assetbundle，提取Type。 </p>
+<p>以上就是大概思路，另外VS类库打dll时，把不需要的引用给删除，确保dll最小。demo工程我已经放到百度云上了。</p>
+<p><strong>另外，以下附上，Unity官方提供的安卓代码热更的文档：  </strong></p>
+<p>项目:Android平台代码增量更新</p>
+<p>原则:在XData目录下的脚本不能涉及到序列化信息的更改，文件名，类名，类中所有能被序列化的field(哪些可以被序列化，参考网页<a href="http://blogs.unity3d.com/2014/06/24/serialization-in-unity/" title="serialization-in-unity" target="_blank" rel="external">serialization-in-unity</a>和<a href="http://blogs.unity3d.com/2012/10/25/unity-serialization/" title="unity-serialization" target="_blank" rel="external">unity-serialization</a>)。  </p>
+<p>编译步骤：<br>1、    编译Support的XData工程(refer: null; output:support.dll)<br>2、    编译Support的Logic工程(refer: support.dll; output:supportLogic.dll)动态加载<br>3、    单独编译本地代码的XData部分，移除Script(Logic)目录后编译(refer: support.dll; output:CSharp-Assembly.dll)<br>4、    编译本地代码的Logic部分(refer:support.dll, supportLogic.dll, CSharp-Assembly; output: CSharp-Assembly-Logic.dll)动态加载</p>
+<p>Note<br>1、    保证四个dll的编译平台一致，统一用3.5<br>2、    保证CSharp-Assembly-Logic.dll和CSharp-Assembly.dll的宏定义一致<br>3、    关于AddComponent接口，如果参数是字符串，则只会在CSharp-Assembly中去查找对应的类；如果参数是Type，则只是调用该接口的方法所在的dll中去查找。<br>4、    关于程序报错可从以下方面去查找原因</p>
+<ul>
+<li>Logic类还没有加载，就被GetComponent，使用自然为空，例如子节点初始状态不是active的，在父节点中GetComponent是，子节点的Logic类还没有被初始化，因为XData类还没有调用Awake方法。（如果是这种情况，使用前判空，若为空，Add）</li>
+</ul>
+<ul>
+<li>情况与上述类似，不一样的是，子节点的类是继承类。（Add的时候，注意要Add对应的子类，而不是声明的父类）</li>
+</ul>
+<ul>
+<li><p>在A的Awake方法中GetComponent(B)，其中B也是另一个被拆分的类，出现空引用，原因在于Awake方法是时序的，A被初始化时，B有可能还没有初始化(出现这种情况，保证B在前执行就行，调整XDataA和XDataB的Script Execution Order就行：Edit-&gt;Project Settings-&gt;Script Exection Order)  </p>
+<p> <img src="/img/ExeOrder.png" alt="&quot;代码执行顺序&quot;"></p>
+</li>
+</ul>
+<p>5、    关于脚本跟资源的依赖关系</p>
+<ul>
+<li>脚本和AssetBundle，将资源带成AssetBundle包(1、脚本挂在资源上;2、脚本继承Scriptable，里面存数据，将其变成资源后打包)，在load资源的时候，只会根据打包时生成的hashid去找对应的脚本。Hashid的计算是通过Assemblyname+Namespace+Classname计算出来的，跟序列化信息无关<br><img src="/img/AndroidCodeUpdate.png" alt="&quot;&quot;"></li>
+</ul>
+<ul>
+<li>在Editor状态的资源和脚本的依赖关系是跟序列化信息有关的，脚本和资源之间是通过guid来关联的，如果在外部修改了脚本的信息，返回Untiy Editor后会重新生成脚本的guid，那么相关的资源要重新attach脚本</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/16/Unity3D通过反射实现安卓的代码热更新/" class="archive-article-date">
+  	<time datetime="2015-09-16T14:36:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-16</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/反射/">反射</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安卓/">安卓</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/热更新/">热更新</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-使用PEiD查看文件的壳" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/07/使用PEiD查看文件的壳/">使用PEiD查看文件的壳</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>比如你要查看某个dll是什么语言开发的。可以使用PEiD。<br>如下图：  </p>
+<p><img src="/img/PEiD show.png" alt="&quot;使用PEiD查看dll的开发语言&quot;"></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/07/使用PEiD查看文件的壳/" class="archive-article-date">
+  	<time datetime="2015-09-07T14:46:19.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-07</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-avi格式视频文件无法渲染" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/07/avi格式视频文件无法渲染/">avi格式视频文件无法渲染</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网上下了一个视频教程包，里面有avi格式的有mp4格式的。所有avi格式的视频都无法播放，用QQ影音播提示视频无法渲染。用迅雷播放器、自带的media player都无法播放。<br>最后找到了一个叫<strong>影音先锋</strong>的软件，牛牛牛。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/07/avi格式视频文件无法渲染/" class="archive-article-date">
+  	<time datetime="2015-09-07T14:07:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-07</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/视频/">视频</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ulua学习笔记1-环境搭建和基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/03/ulua学习笔记1-环境搭建和基础知识/">ulua学习笔记1-环境搭建和基础知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"><a href="#本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。" class="headerlink" title="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"></a>本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。</h2><p>这一系列用于记录笔者学习ulua热更新的过程。首先来看Windows下lua环境的搭建。  </p>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>环境：lua for windows (lfW)<br>主页：<a href="http://luaforwindows.luaforge.net/" target="_blank" rel="external">http://luaforwindows.luaforge.net/</a>  </p>
+<p>lua for windows是一整套Lua的开发环境，主要包括：  </p>
+<ul>
+<li><p>Lua Interpreter(Lua解释器)</p>
+</li>
+<li><p>Lua Reference Manual(Lua参考手册)</p>
+</li>
+<li><p>Quick Lua Tour(Lua快速入门)</p>
+</li>
+<li><p>Examples(Lua范例)</p>
+</li>
+<li><p>Librarier with documentation(一些Lua库和文档)</p>
+</li>
+<li>SciTE(一款多用途编辑器，已经对Lua做了特殊的设置)</li>
+</ul>
+<p>上述提到的主页上可以下载lfW（需要翻~墙）,最新版本为：5.1.4-46。一路默认安装，最后一步会询问是否使用SciTE默认的“黑色”风格，一般建议勾选。  </p>
+<p>使用SciTE:打开SciTE,新建文件，输入print(“hello world”),然后保存为test.lua，注意文件名后缀一定要带上，且为.lua,否则无法正确运行。<br>然后按F5,结果如图：<br><img src="/img/lua hello world.jpg" alt="&quot;Lua Hello world&quot;"></p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>基础知识以5.1.4-46这个环境下为例。  </p>
+<p>1，注释<br>–单行注释<br>–[[多行注释，<br>多行注释]]  </p>
+<p>2，变量<br>—-代码—-<br>a=1<br>b=”abc”<br>c={}<br>d=print  </p>
+<p>print(type(a))<br>print(type(b))<br>print(type(c))<br>print(type(d))</p>
+<p>—-输出—-<br>number<br>string<br>table<br>function</p>
+<p>3,变量名称<br>字符、数字、下划线组成，且不能以数字开头。<br>以下划线开头的变量通常用于特殊的值，如_VERSION,输出结果为当前Lua的版本。所以变量一般也不以下划线开头。</p>
+<p>—-代码—-<br>print(_VERSIONG)<br>—-结果—-<br>Lua 5.1</p>
+<p>4,大小写敏感<br>—-代码—-<br>ab=1<br>Ab=2<br>AB=3<br>print(ab,Ab,AB)  </p>
+<p>—-输出—-<br>1   2   3</p>
+<p>5,关键字<br>Lua的关键字，如：and,break,do,else,elseif,for,function,if,local,nil,not,or,end,false,in,repeat,return,then,true,until,while。<br>关键字不能用于变量名。</p>
+<p>6,字符串<br>单行字符串可以用””或’’修饰，若字符串中包含”或’字符，需要使用转义符\<br>多行字符串用[[XXXXXX]]</p>
+<p>7,赋值<br>Lua支持多重赋值。<br>—-代码—-<br>a,b,c,d,e=1,2,”three”,”four”,5<br>print(a,b,c,d,e)<br>a,b,c,d,e=e,d,c,b,a<br>print(a,b,c,d,e)</p>
+<p>—-输出—-<br>1   2   three   four   5<br>5   four   three   2   1  </p>
+<p>8,number类型<br>lua的数字类型都是默认double型，不用担心其精度和处理速度的问题。<br>—-代码—-<br>a,b,c,d,e=1,1.123,1E9,-123,.0008<br>print(“a=”..a,”b=”..b,”c=”..c,”d=”..d,”e=”..e)  –..是字符串连接符</p>
+<p>—-输出—-<br>a=1    b=1.123   c=1000000000   d=-123   e=0.0008</p>
+<p>9,打印<br>print “Hello world!”<br>print ‘Hello world!’<br>print(“Hello world!”)<br>print(‘Hello world!’)</p>
+<p>print打印后会换行。</p>
+<p>io.write “Hello world!”<br>io.write ‘Hello world!’<br>io.write(“Hello world!”)<br>io.write(‘Hello world!’)</p>
+<p>io打印后不换行。</p>
+<p>10，Tables<br>—-代码，简单表的创建—-<br>a={} –{}创建一个空的表<br>b={1,2,3} –创建一个表，包含数值1，2，3<br>c={“a”,”b”,”c”} –创建一个表包含字符串 a,b,c<br>print(a,b,c) –表不能直接打印，因此结果很诡异</p>
+<p>—-输出—-<br>table:002DBA80 table:002DBAD0 table:002dbaf8</p>
+<p>—-代码，访问表—-<br>address={} –一个空表address<br>address.Street=”WuHan”<br>address.Age=”100”<br>address.Country=”China”  </p>
+<p>print(address.Street,address[“Age”],address[“Country”])  </p>
+<p>—-输出—-<br>Wuhan    100    China</p>
+<p>11，if语句<br>—-代码，简单if语句—-  </p>
+<pre><code>a=1
+if a==1 then
+    print(&quot;a is one&quot;)
+end
+</code></pre><p>—-输出—-<br>a is one</p>
+<p>—-代码，if else—-  </p>
+<pre><code>b=&quot;happy&quot;
+if b==&quot;sad&quot; then
+    print(&quot;b is sad&quot;)
+else
+    print(&quot;b is not sad&quot;)
+end
+</code></pre><p>—-输出—-<br>b is not sad</p>
+<p>—-代码，if elseif else—-  </p>
+<pre><code>c=3
+if c==1 then
+    print(&quot;c is 1&quot;)
+elseif c==2 then
+    print(&quot;c is 2&quot;)
+else
+    print(&quot;c is not 1 or 2,c is&quot;..tostring(c)) --也可以用print(&quot;c is not 1 or 2,c is&quot;..c)
+end
+</code></pre><p>—-输出—-<br>c is not 1 or 2,c is 3</p>
+<p>12,while语句<br>—-代码—-  </p>
+<pre><code>a=1
+while a~=5 do --Lua use ~= to mean not equal
+    a=a+1
+    io.write(a..&quot; &quot;)
+end
+</code></pre><p>—-输出—-<br>2 3 4 5</p>
+<p>13,repeat until语句<br>—-代码—-  </p>
+<pre><code>a=0
+repeat 
+    a=a+1
+    print(a)
+until a==5
+</code></pre><p>—-输出—-<br>1<br>2<br>3<br>4<br>5  </p>
+<p>可以发现，repeat until语句不需要使用end</p>
+<p>14,for语句<br>—-代码—-  </p>
+<pre><code>for a=1,4           --从1输出4，每次递增1
+    do io.write(a..&quot; &quot;)
+end
+
+print()
+
+for a=1,6,3
+    do io.write(a..&quot; &quot;)
+end
+
+for key,value in pairs({1,21,3,4})
+    do print(key,value)
+end
+</code></pre><p>—-输出—-<br>1 2 3 4<br>1 4<br>1    1<br>2    21<br>3    3<br>4    4</p>
+<p>15,打印表<br>—-代码—-  </p>
+<pre><code>a={1,2,3,4,&quot;five&quot;,&quot;elephant&quot;,&quot;mouse&quot;}
+for i,v in ipairs(a)
+    do print(i,v)
+end
+</code></pre><p>—-输出—-<br>1    1<br>2    2<br>3    3<br>4    4<br>5    five<br>6    elephant<br>7    mouse</p>
+<p>16,break语句<br>–break用于跳出循环<br>—-代码—-</p>
+<pre><code>a=0
+while true do
+    a=a+1
+    if    a==10 then
+        break
+    end
+end
+print(a)
+</code></pre><p>—-输出—-<br>10</p>
+<p>17，函数<br>–定义一个无参数，无返回值的函数。  </p>
+<pre><code>function myFirstLuaFunction()
+    print(&quot;My first lua function was called&quot;)
+end
+</code></pre><p>–定义一个有返回值的函数<br>    function mySecondLuaFunction()<br>        return “string from my second function”<br>    end<br>–第一有参数，有返回值的函数<br>    function myThirdLuaFunction(a,b,c)<br>        return a,b,c,“a string”,1,true<br>    end</p>
+<p>–调用函数<br>    myFirstLuaFunction()<br>    mySecondLuaFunction()<br>    myThirdLuaFunction(1,2,”three”)</p>
+<p>18,变量作用域<br>默认变量的作用域为全局的，只有前面加了local标识的变量才是局部的。</p>
+<p>19,格式化打印<br>—-代码—-  </p>
+<pre><code>function printf(fmt,...)
+    io.write(string.format(fmt,...))
+end
+printf(&quot;Hello %s from %s on %s\n&quot;,os.getenv &quot;USER&quot; or &quot;there&quot;,_VERSION,os.date())
+</code></pre><p>—-输出—-<br>Hello there from Lua 5.1 on 09/03/15 16:55:59</p>
+<p>20,Lua库</p>
+<ul>
+<li><p>math库:<br>math.abs,math.acos,math.cos,math.deg,math.exp,math.ceil,math.floor,math.fmod,math.log,math.log10,math.min,math.max,math.modf,math.pi,math.pow,math.rad,math.random,math.sqrt,math.randomseed等。</p>
+</li>
+<li><p>string库:<br>string.byte,string.char,string.dump,string.find,string.format,string.gfind,string.gsub,string.len,string.lower,string.match,string.rep,string.reverse,string.sub,string.upper</p>
+</li>
+<li><p>table库：<br>table.concat,table.insert,table.maxn,table.remove,table.sort<br>—-代码—-  </p>
+<p>  a={2}<br>  table.insert(a,3);<br>  table.insert(a,4);<br>  table.sort(a,function(v1,v2) return v1&gt;v2 end)<br>  for i,v in ipairs(a) do print(i,v) end</p>
+</li>
+</ul>
+<p>—-输出—-<br>1    4<br>2    3<br>3    2</p>
+<p>21,标准库-input/output<br>io.close,io.flush,io.input,io.lines,io.open,io.output,io.popen,io.read,io.stderr,io.stdout,io.tmpfile,io.type,io.write,<br>file:close,file:flush,file:line,file:read,file:seek,file:setvbuf,file:write  </p>
+<p>22,标准库-os相关<br>os.clock,os.date,os.difftime,os.execute,os.exit,os.getenv,os.remove,os.rename,os.setlocale,os.time,os.tmpname<br>—-代码—-<br>print(os.date())<br>—-输出—-<br>09/03/15 22:48:22</p>
+<p>23,外部库<br>–Lua通过使用require()来引用外部模块。<br>—-代码—-  </p>
+<pre><code>require(&quot;iuplua&quot;)
+ml=iup.multiline
+{
+    expand=&quot;YES&quot;
+    value=&quot;quit this multiline edit app to continue Tutorial!&quot;
+    border=&quot;YES&quot;
+}
+
+dlg=iup.dialog{ml;title=&quot;IupMultiline&quot;,size=&quot;QUARTERxQUARTER&quot;,}  
+dlg:show()  
+print(&quot;Exit GUI app to continue!&quot;)
+iup.MainLoop()
+</code></pre><p>补充：</p>
+<ul>
+<li><p>1，pairs和ipairs<br>ipairs(t):<br>for i,v in ipairs(t) do body end<br>will iterate over the pairs(1,t[1]),(2,t[2]),…,up to the first integer key absent from the table.（特别要注意这里index是从1开始的，也即lua的下标是从1开始的）</p>
+<p>  pairs(t):<br>  for k,v in pairs(t) do body end<br>will iterate over all key-value pairs of table t.</p>
+</li>
+<li><p>2，null在lua中用nil表示，对于布尔类型只有nil和false是false,数字0、空字符串都是true</p>
+</li>
+</ul>
+<ul>
+<li>3,lua没有++，+=这些操作符</li>
+</ul>
+<ul>
+<li><p>4，条件表达式中的与、或、非用and、or、not关键字，不可以使用&amp;&amp;、||、！</p>
+</li>
+<li><p>5，lua中的全局变量实质上被存储在一个叫”_G”的Table中了，比如我们有个全局变量abc，则可以通过_G.abc或者_G[“abc”]来访问这个全局变量。</p>
+</li>
+</ul>
+<p>参考：<br>Lua5.1在线手册：<a href="http://book.luaer.cn/" target="_blank" rel="external">http://book.luaer.cn/</a><br>云风翻译Lua手册：<a href="http://www.codingnow.com/2000/download/lua_manual.html" target="_blank" rel="external">http://www.codingnow.com/2000/download/lua_manual.html</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/03/ulua学习笔记1-环境搭建和基础知识/" class="archive-article-date">
+  	<time datetime="2015-09-03T06:34:27.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lua/">lua</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ulua/">ulua</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/热更新/">热更新</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Unity3D编辑器扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/30/Unity3D编辑器扩展/">Unity3D编辑器扩展</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"><a href="#本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。" class="headerlink" title="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"></a>本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。</h2><h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p>编辑器扩展这部分包括很多内容，我这里给它分成以下几类：  </p>
+<ul>
+<li>新编辑功能</li>
+<li>重写Inspector视图</li>
+<li>Scene界面交互</li>
+<li>Gizmos辅助显示<h1 id="新编辑功能"><a href="#新编辑功能" class="headerlink" title="新编辑功能"></a>新编辑功能</h1>一共三种类型，一种是使用MenuItem标识，另外两种是继承自ScriptableWizard、EditorWindow。需要注意的是MenuItem标识是后两种的基础。<h2 id="MenuItem标识"><a href="#MenuItem标识" class="headerlink" title="MenuItem标识"></a>MenuItem标识</h2>使用MenuItem标识可以为编辑器添加新的菜单,也可以为Inspector上下文添加菜单。只有静态方法可以使用该标识，该标识可以把静态方法转换为菜单命令。<br>另外可以为菜单创建快捷方式(hotkey),你可以使用如下特殊修饰字符：%(Windows系统上的ctrl,OS X系统上的cmd),#(shift),&amp;(alt)。比如快捷方式“shift-alt-g”的写法为[MenuItem(“XX/XX/XXX #&amp;g”)]。如果不需要为hotkey提供修饰符需要用字符_修饰，如快捷方式“g”的写法为[MenuItem(“XX/XX/XXX _g”)]<br>另外还可以支持一些特殊的字符：LEFT、RIGHT、UP、DOWN、F1…F12、HOME、END、PGUP、PGDN。  </li>
+</ul>
+<p>如下为示例代码:  </p>
+<pre><code>using UnityEngine;  
+using System.Collections;  
+using UnityEditor;  
+
+public class AddChild
+{
+    [MenuItem(&quot;Custom/Create Child For Selected GameObjects&quot;)]
+    static void MenuAddChild()
+    {
+        Transform[] transforms = Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.OnlyUserModifiable);
+        foreach (Transform transform in transforms)
+        {
+            GameObject aChild = new GameObject(&quot;_Child&quot;);
+            aChild.transform.parent = transform;
+        }
+    }
+    [MenuItem(&quot;Custom/Create Child For Selected GameObjects&quot;, true)]
+    static bool ValidateMenuAddChild()
+    {
+        return Selection.activeGameObject != null;
+    }
+}
+</code></pre><p>上述代码实现了为选择的GameObject添加子物体的功能。<br>函数为静态函数，函数名任意，但是第二个验证函数是固定的，必须以Validate开头，再加上前面函数的名字。<br>另外需要注意到第二个验证函数中第一个参数必须和第一个函数一致，第二个参数为true。当验证函数返回false的时候，则第一个函数对应的操作无法激活。代码所示即当没有选择GameObject的时候，Custom/Create Child For Selected GameObjects这个目录下的选项是灰化的。<br>另外MenuItem后面若是跟GameObject则选项出现在已经存在的GameObject选项栏下；<br>若跟Assets，则出现在Assets选项栏下,另外需要注意的是Assets选项栏下的操作都是可以通过在Project面板下右键具体assets来弹出选项的；<br>若跟Assets/Create则选项出现在Project视图的Create按钮下；<br>若跟”CONTEXT/具体Component名/XXX”则可以为这个具体组件的Inspector上下文添加菜单,菜单的打开方式为右键组件或者左键组件最右边的“齿轮”按钮，需要注意的是为具体组件的Inspector上下文添加菜单不支持多重层次。<br>以下代码为Inspector上下文菜单：  </p>
+<pre><code>public class AddChild
+{
+    [MenuItem(&quot;CONTEXT/Transform/Create Child For Selected GameObjects&quot;)]
+    static void MenuAddChild()
+    {
+        Transform[] transforms = Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.OnlyUserModifiable);
+        foreach (Transform transform in transforms)
+        {
+            GameObject aChild = new GameObject(&quot;_Child&quot;);
+            aChild.transform.parent = transform;
+        }
+    }
+    [MenuItem(&quot;CONTEXT/Transform/Create Child For Selected GameObjects&quot;, true)]
+    static bool ValidateMenuAddChild()
+    {
+        return Selection.activeGameObject != null;
+    }
+}
+</code></pre><p>以上代码实现了把增加子节点的功能注入到Inspector面板上Transform组件的弹出菜单中。<br>另外有时候我们需要获得Inspector上下文菜单对应的组件，这个时候需要用到<strong>MenuCommand</strong>,如下：  </p>
+<pre><code>[MenuItem(&quot;CONTEXT/Rigidbody/DoSomething&quot;)]
+static void DoSomething(OnInspectorGUI command)
+{
+    Rigidbody body=command.context;
+    body.mass=5;
+}
+</code></pre><p><strong>补充：</strong><br>MenuItem标识可以实现排序和分组的功能  </p>
+<pre><code>[MenuItem(&quot;NewMenu/Option1&quot;, false, 1)]
+private static void NewMenuOption()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option2&quot;, false, 2)]
+private static void NewMenuOption2()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option3&quot;, false, 3)]
+private static void NewMenuOption3()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option4&quot;, false, 51)]
+private static void NewMenuOption4()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option5&quot;, false, 52)]
+private static void NewMenuOption5()
+{
+}
+</code></pre><p>如上述代码所示，最后的阿拉伯数字即排序所用，越小的排在越上，UnityEditor会自动分组，50为单位。</p>
+<h2 id="继承自ScriptableWizard"><a href="#继承自ScriptableWizard" class="headerlink" title="继承自ScriptableWizard"></a>继承自ScriptableWizard</h2><p>通过继承ScriptableWizard可以创建编辑器向导，Unity3D已经为我们封装好了一些变量、方法、消息。如：  </p>
+<ul>
+<li><p>变量：errorString(设置向导的错误提示信息)、helpString(设置向导的帮助提示)、isValid(可以控制向导的Create Button和Other Button能否点击)。  </p>
+</li>
+<li><p>静态方法：DisplayWizard  </p>
+</li>
+<li><p>消息：OnDrawGizmos(当向导可见的时候每帧执行，可用gizmos来实现预览的效果)、OnWizardCreate(当点击Create按钮的时候触发)、OnWizardOtherButton(当点击Other按钮的时候)、OnWizardUpdate(当向导打开的瞬间或者向导中有输入参数的变化时触发)</p>
+</li>
+</ul>
+<p>下面看一个实例代码:</p>
+<pre><code>public class CreateACube : ScriptableWizard
+{
+    public float size = 1f;//声明为public可以被向导序列化显示在界面上，从而可以自由改变它的值
+    [MenuItem(&quot;Custom/CreateACube&quot;)]
+    static void CreateACubeWizard()
+    {
+        //ScriptableWizard.DisplayWizard&lt;CreateACube&gt;(&quot;创建一个Cube&quot;, &quot;确定&quot;, &quot;取消&quot;);//这两种写法均可，要点是提供一个type，type类型为类的名字
+        ScriptableWizard.DisplayWizard(&quot;创建一个Cube&quot;, typeof(CreateACube), &quot;确定&quot;, &quot;取消&quot;);
+    }
+
+    void OnDrawGizmos()
+    {
+        if (size &lt; 3)
+        {
+            return;
+        }
+        else
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(Vector3.zero, new Vector3(size, size, size));
+        }
+    }
+
+    void OnWizardCreate()
+    {
+        GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        obj.transform.localScale = new Vector3(size, size, size);
+    }
+
+    void OnWizardOtherButton()
+    {
+        Close();
+    }
+
+    void OnWizardUpdate()
+    {
+        helpString = &quot;输入Cube的Size,Size要大于等于3,创建一个Cube&quot;;
+
+        if (size &lt; 3)
+        {
+            errorString = &quot;size要大于等于3&quot;;
+            isValid = false;
+        }
+        else
+        {
+            errorString = &quot;&quot;;
+            isValid = true;
+        }
+    }
+}
+</code></pre><p>上述代码中OnDrawGizmos()没有生效，我使用的是4.5.2f1版本的Unity，还请知道原因的告知！<br>下图为上述代码实现的向导：<br><img src="/img/ScriptableWizard.png" alt="&quot;ScriptableWizard向导&quot;"></p>
+<h2 id="继承自EditorWindow"><a href="#继承自EditorWindow" class="headerlink" title="继承自EditorWindow"></a>继承自EditorWindow</h2><p>继承自EditorWindow的类，可以实现编辑器窗口的功能。类似于Inspector、Project界面等等复杂的功能，而且可以自由镶嵌到Unity界面内，构成一定的layout。<br>如下代码为在集成自EditorWindow的类中实现上述创建一个Size&gt;=3的Cube的功能： </p>
+<pre><code>public class CreateACube2 : EditorWindow
+{
+    float size = 1f;
+    string helpString = &quot;输入Cube的Size,Size要大于等于3,创建一个Cube&quot;;
+    string errorString = &quot;size需要大于等于3&quot;;
+    bool enableConfromButton = false;
+    static Color originColor;
+    [MenuItem(&quot;Custom/CreateACube2&quot;)]
+    static void Init()
+    {
+        //获取已经打开的window,如果不存在则new一个
+        CreateACube2 window = EditorWindow.GetWindow(typeof(CreateACube2)) as CreateACube2;
+        originColor = GUI.color;
+    }
+
+    void OnGUI()
+    {
+        GUILayout.Label(helpString, EditorStyles.boldLabel);
+        size = EditorGUILayout.FloatField(&quot;size:&quot;, size);
+
+        enableConfromButton = size &gt;= 3 ? true : false;
+        if (enableConfromButton)
+        {
+            GUI.enabled = true;
+        }
+        else
+        {
+            GUI.enabled = false;//设置error的时候Button按钮不可点击
+            GUI.color=Color.red;//设置errorString的颜色为红色
+            GUILayout.Label(errorString);
+        }
+        GUI.color = originColor;
+        if (GUILayout.Button(&quot;确定&quot;))
+        {
+            DoCreate();
+        }
+    }
+
+    void DoCreate()
+    {
+        GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        obj.transform.localScale = new Vector3(size, size, size);
+    }
+} 
+</code></pre><p>OnGUI消息是继承自EditorWindow类的最重要的消息，在其内部可以自己来创建GUI。另外还有一些比较重要的消息：  </p>
+<ul>
+<li>OnDestroy()当EditorWindow关闭的时候触发。</li>
+<li>OnFocus()当Window获得焦点触发。</li>
+<li>OnHierarchyChange()当Hierarchy面板内有改变的时候触发。</li>
+<li>OnInspectorUpdate()每秒十帧的触发，来判断Inspector界面是否有改变。</li>
+<li>OnLostFocus()当Window失去焦点触发。</li>
+<li>Update()每秒100次的触发，在所有可见的Windows。<br>还有一些好用的消息，变量，静态方法，方法…具体查看文档。</li>
+</ul>
+<h1 id="重写Inspector视图"><a href="#重写Inspector视图" class="headerlink" title="重写Inspector视图"></a>重写Inspector视图</h1><p>重写Inspector视图，是最强大的一种编辑器扩展。下面以一个最简单的实例来说明如何使用。<br>我们定义一个Player:  </p>
+<pre><code>public class Player : MonoBehaviour
+{    
+    public int armor = 75;
+    public int damage = 20;
+    public GameObject gun;
+}    
+</code></pre><p>把脚本拖拽到GameObject作为Component后其对应的Inspector界面如下：<br><img src="/img/Editor1Player.png" alt="&quot;普通状态下的Inspector界面&quot;"><br>为了实现重写Inspector视图的目地，我们新建一个脚本PlayerEditor.cs，继承自Editor，且把脚本放到Editor目录下。代码如下：</p>
+<pre><code>[CanEditMultipleObjects]
+[CustomEditor(typeof(Player))]
+public class PlayerEditor : Editor
+{
+    SerializedProperty armorProp;
+    SerializedProperty damageProp;
+    SerializedProperty gunProp;
+
+    void OnEnable()
+    {
+        armorProp = serializedObject.FindProperty(&quot;armor&quot;);
+        damageProp = serializedObject.FindProperty(&quot;damage&quot;);
+        gunProp = serializedObject.FindProperty(&quot;gun&quot;);
+    }
+
+    public override void OnInspectorGUI()
+    {
+        //更新serializedProperty，一般在OnInspector函数的一开始使用。
+        serializedObject.Update();
+
+        //依次重写Player.cs脚本中的armor,damage,gun
+        EditorGUILayout.IntSlider(armorProp, 0, 100, new GUIContent(&quot;Armor&quot;));
+        if (!armorProp.hasMultipleDifferentValues)//当该值相同的时候才显示ProgressBar
+        {
+            ProgressBar(armorProp.intValue / 100.0f, &quot;ArmorCount&quot;);
+        }
+
+        EditorGUILayout.IntSlider(damageProp, 0, 100, new GUIContent(&quot;Damage&quot;));
+        if (!damageProp.hasMultipleDifferentValues)
+        {
+            ProgressBar(damageProp.intValue / 100.0f, &quot;DamagePower&quot;);
+        }
+
+        EditorGUILayout.PropertyField(gunProp, new GUIContent(&quot;Gun Object&quot;));
+
+        //使更改生效（对于使用了SerializedProperty、SerializedObject）
+        serializedObject.ApplyModifiedProperties();
+    }
+
+    private void ProgressBar(float value, string str)
+    {
+        Rect rect = GUILayoutUtility.GetRect(18, 18, &quot;TextField&quot;);
+        EditorGUI.ProgressBar(rect, value, str);
+        EditorGUILayout.Space();
+    }
+}
+</code></pre><p>下图为以上代码重写后的界面：<br><img src="/img/Editor2Player.png" alt="&quot;重写Inspector界面# 2 #&quot;"><br>实现Inspector重写的方式有多种，上述代码使用了推荐的SerializedProperty和SerializedObject来实现<br>上述代码需要解释的地方有如下几点：</p>
+<ul>
+<li><p>[CustomEditor(typeof(Player))] 这个编辑器属性可以把Editor脚本和原始cs脚本建立关系，从而实现重写。</p>
+</li>
+<li><p>[CanEditMultipleObjects] 使用了这个编辑器属性，可以确保当选择的多个物体具有相同组件的时候不会报错“Multi-object editing not supported”，而且可以支持多个物体编辑。</p>
+</li>
+<li><p>OnInspectorGUI() 重写该方法可以实现对默认Inspector界面的重写。该方法也是最常用的一个方法。</p>
+</li>
+<li><p>GUILayoutUtility.GetRect(18, 18, “TextField”) 该方法的作用??????</p>
+</li>
+</ul>
+<p>另一种不是通过SerializedProperty、SerializedObject方法来实现的代码如下：  </p>
+<pre><code>[CanEditMultipleObjects]
+[CustomEditor(typeof(Player))]
+public class PlayerEditor : Editor
+{
+    Player player;
+
+    void OnEnable()
+    {
+        player = target as Player;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        player.armor = EditorGUILayout.IntSlider(&quot;Armor&quot;, player.armor, 0, 100);
+        ProgressBar(player.armor / 100f, &quot;ArmorCount&quot;);
+
+        player.damage = EditorGUILayout.IntSlider(&quot;Damage&quot;, player.damage, 0, 100);
+        ProgressBar(player.damage / 100f, &quot;DamagePower&quot;);
+
+        bool allowSceneObjects = !EditorUtility.IsPersistent(player);
+        player.gun = EditorGUILayout.ObjectField(&quot;Gun Object&quot;, player.gun, typeof(GameObject), allowSceneObjects) as GameObject;
+    }
+
+    private void ProgressBar(float value, string str)
+    {
+        Rect rect = GUILayoutUtility.GetRect(18, 18, &quot;TextField&quot;);
+        EditorGUI.ProgressBar(rect, value, str);
+        EditorGUILayout.Space();
+    }
+}
+</code></pre><p>下图为以上代码重写后的界面：<br><img src="/img/Editor3Player.png" alt="&quot;重写Inspector界面2&quot;">  </p>
+<p>上述代码中需要说明的地方：</p>
+<ul>
+<li>EditorUtility.IsPersistent(player) 该方法获得目标物体是否存在disk上。官方的解释为：Typically assets like prefabs, textures, audio clips, animation clips, materials are stored on disk.Returns false if the object lives in the scene. Typically this is a game object or component but it could also be a material that was created from code and not stored in an asset but instead stored in the scene.因此EdiotrUtility.IsPersistent(player)返回结果为false。</li>
+</ul>
+<p>补充一些在OnInspectorGUI()方法中常用到的方法：</p>
+<ul>
+<li><p>DrawDefaultInspector() 绘制默认的对应脚本中的Inspector，常用于扩展一个已经存在的组件：比如想在Camera组件上添加个按钮，实现特殊功能，则可以写个类用[CustomEditor(typeof(Camera))]和Camera建立关系，然后在OnInspector()中先调用DrawDefaultInspector(),然后再添加需要的按钮之类的。</p>
+</li>
+<li><p>EditorGUILayout.Separator() 一个比较大的空行</p>
+</li>
+<li><p>EditorGUILayout.Space() 一个比较小的空行</p>
+</li>
+<li><p>GUILayout.Space(10f) 可控具体空多少行</p>
+</li>
+<li><p>GUILayout.BeginHorizontal()和GUILayout.EndHorizontal() 二者一起可以让内部GUI水平排列。同理还有Vertical。 </p>
+</li>
+</ul>
+<h1 id="Scene界面交互"><a href="#Scene界面交互" class="headerlink" title="Scene界面交互"></a>Scene界面交互</h1><p>Scene界面内的交互在上述Inspector重写的基础上进行，前戏步骤同上，用到的要点姿势有如下一些：<br>在上述OnEnable()函数中提供一个委托<code>SceneView.OnSceneGUIDelegate=SomeFuction;</code><br>在方法SomeFuction(SceneView sceneView)中进行当Scene窗口获得焦点后的具体操作。通常需要获得一个当前交互的事件，比如<code>Event e= Event.current;</code>然后通过判断e.isKey、e.character==”p”之类的来获得键盘操作。<br>有时我们会在Inspector界面内点击了某个按钮后触发Scene界面的交互，这个时候需要强制获得Scene的焦点。可以使用<code>(SceneView.sceneViews[0] as SceneView).Focus();</code>。<br>必要的地方需要使用<code>SceneView.RepaintAll();</code>来即时刷新Scene窗口。<br>Scene界面内获得当前鼠标所在位置发射的射线：<code>Ray ray=HandleUtility.GUIPointToWorldRay(e.mousePosition);</code><br>Scene内世界坐标转换为屏幕GUI坐标:<code>HandleUtility.WorldToGUIPoint(worldPos);</code></p>
+<h2 id="OnSceneGUI"><a href="#OnSceneGUI" class="headerlink" title="OnSceneGUI"></a>OnSceneGUI</h2><p>OnSceneGUI()是进行Scene界面交互一个重要消息，可以用GUI的形式在其内部绘制Scene界面交互结果信息。一个简单的例子如下，注意必须当选中带有该脚本对应的组件物体时，该消息才触发：  </p>
+<pre><code>void OnSceneGUI()
+{
+    Handles.BeginGUI();//绘制必须使用BeginGUI()和EndGUI()，否则不显示。
+    var guiPoint = HandleUtility.WorldToGUIPoint(Vector3.zero);
+    GUI.Box(new Rect(guiPoint.x - 50, guiPoint.y - 30, 100, 60), &quot;你好&quot;);
+    GUI.Button(new Rect(200, 200, 200, 100), &quot;Button&quot;);
+    Handles.EndGUI();
+}
+</code></pre><h1 id="Gizmos辅助显示"><a href="#Gizmos辅助显示" class="headerlink" title="Gizmos辅助显示"></a>Gizmos辅助显示</h1><p>绘制Gizmos一般使用void OnDrawGizmos()方法，继承自MonoBehaviour和Scriptwizard都有该方法。<br>另外还有一种DrawGizmo方法，也是一种通过编辑器属性来设定的,如下建立一个TestDrawGizmo.cs的脚本，放到Editor目录下。和OnSceneGUI()不同的是可以做到不需要选中物体便可以显示相关信息：  </p>
+<pre><code>public class TestDrawGizmo
+{
+    [DrawGizmo(GizmoType.NotSelected | GizmoType.Pickable | GizmoType.SelectedOrChild)]
+    static void RenderLightGizmo(Light light, GizmoType gizmoType)
+    {
+        Handles.Label(light.transform.position, light.transform.gameObject.name);
+        Gizmos.DrawIcon(light.transform.position + Vector3.up, &quot;Light.png&quot;);        
+        if ((gizmoType &amp; GizmoType.SelectedOrChild) != 0)
+        {
+            if ((gizmoType &amp; GizmoType.Active) != 0)
+            {
+                Gizmos.color = Color.red*0.4f;
+            }
+            else
+                Gizmos.color = Color.red * 0.5f;
+
+            Gizmos.DrawSphere(light.transform.position, light.range);
+        }
+    }
+}    
+</code></pre><p>结果如下：<br><img src="/img/DrawGizmoResult.png" alt="&quot;DrawGizmo结果&quot;"></p>
+<p><strong>补充知识</strong><br>类的继承关系<br>ScriptableWizard:EditorWindow:ScriptableObject:Object:UnityEngine<br>Editor:ScriptableObject:Object:UnityEngine </p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/30/Unity3D编辑器扩展/" class="archive-article-date">
+  	<time datetime="2015-08-29T17:24:24.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-30</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编辑器扩展/">编辑器扩展</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Unity3D行结束符相关问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/Unity3D行结束符相关问题/">Unity3D行结束符相关问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文以Windows系统上来说明。<br>相信很多Unity3D开发者都遇到过这个警告：<br>There are inconsistent line endings in the ‘XXXXXX’ script. Some are Mac OS X (UNIX) and some are Windows.<br>This might lead to incorrect line numbers in stacktraces and compiler errors. Many text editors can fix this using Convert Line Endings menu commands<br>这个警告告诉你，有某脚本上的行结束符不一致，即既有有CR LF标识的，又有LF标识的。这样的话会导致堆栈路径中的错误行数，甚至是编译错误。<br>需要注意的是，CR LF是windows系统上的行结束符，LF是Unix系统上的行结束符。  </p>
+<p>使用Notepad++可以查看文件的行尾符。视图-&gt;显示符号-&gt;显示行尾符。  </p>
+<p>使用Visual Studio可以统一某个脚本的行结束符：FILE-&gt;Advanced Save Options<br>在弹出的面板中选择需要的Line endings即可。如下图：<br><img src="/img/AdvancedSaveOption.jpg" alt="AdvancedSaveOption.jpg"><br>也可以使用Notepad++来更改行结束符：<br><img src="/img/LineEnd.jpg" alt="使用Notepad++更改行结束符">  </p>
+<p>个人机器可以将：C:\Program Files\Unity\Editor\Data\Resources\ScriptTemplates\下4个unity新建文件的模板改为需要的行结束符。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/Unity3D行结束符相关问题/" class="archive-article-date">
+  	<time datetime="2015-08-17T15:38:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-像素深度和图像深度" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/像素深度和图像深度/">像素深度和图像深度</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一般意义上图像的像素深度和图像深度是一个概念。都是指存储每个像素所用的位数（bits per pixel,BPP），用来度量图像的分辨率，可以用来决定彩色图像的每个像素可能有的颜色数或者确定灰度图像的每个像素可能有的灰度级别。<br>例如，一副彩色图像的每个像素用r、g、b三个分量表示，若每个分量用8位，那么一个像素公用24位表示，就说像素的深度为24，每个像素可以是2的24次方种颜色中的一种。  </p>
+<p>根据图像的深度可以计算出图像的数据量。<br>如，一副图像的尺寸是1024 <em> 768，深度为16。则其数据量为:<br>字节（byte）数：1024 </em> 768 <em> 16/8（单位B）<br>KB数：1024 </em> 768 <em> 16/8/1024（单位KB）<br>MB数：1024 </em> 768 * 16/8/1024/1024（单位MB）<br>最终计算所得MB为1.5MB。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/像素深度和图像深度/" class="archive-article-date">
+  	<time datetime="2015-08-17T15:24:47.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cg/">cg</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-各种移动GPU压缩纹理的使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/各种移动GPU压缩纹理的使用方法/">各种移动GPU压缩纹理的使用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文转载自：http-www-cnblogs-com-luming1979-archive-2013-02-04-2891421-html"><a href="#本文转载自：http-www-cnblogs-com-luming1979-archive-2013-02-04-2891421-html" class="headerlink" title="本文转载自：http://www.cnblogs.com/luming1979/archive/2013/02/04/2891421.html"></a>本文转载自：<a href="http://www.cnblogs.com/luming1979/archive/2013/02/04/2891421.html" target="_blank" rel="external">http://www.cnblogs.com/luming1979/archive/2013/02/04/2891421.html</a></h2><h1 id="1-移动GPU大全"><a href="#1-移动GPU大全" class="headerlink" title="1. 移动GPU大全"></a>1. 移动GPU大全</h1><p>目前移动市场的GPU主要有四大厂商系列：</p>
+<h2 id="1）Imagination-Technologies的PowerVR-SGX系列"><a href="#1）Imagination-Technologies的PowerVR-SGX系列" class="headerlink" title="1）Imagination Technologies的PowerVR SGX系列"></a>1）Imagination Technologies的PowerVR SGX系列</h2><p><img src="/img/ImaginationLogo.jpg" alt="ImaginationLogo.jpg"><br>代表型号：PowerVR SGX 535、PowerVR SGX 540、PowerVR SGX 543MP、PowerVR SGX 554MP等<br>代表作  ：Apple iPhone全系、iPad全系，三星I9000、P3100等</p>
+<h2 id="2）Qualcomm-高通-的Adreno系列"><a href="#2）Qualcomm-高通-的Adreno系列" class="headerlink" title="2）Qualcomm(高通)的Adreno系列"></a>2）Qualcomm(高通)的Adreno系列</h2><p><img src="/img/QualcommLogo.jpg" alt="QualcommLogo.jpg"><br>代表型号：Adreno 200、Adreno 205、Adreno 220、Adreno 320等<br>代表作  ：HTC G10、G14，小米1、2等</p>
+<h2 id="3）ARM的Mali系列"><a href="#3）ARM的Mali系列" class="headerlink" title="3）ARM的Mali系列"></a>3）ARM的Mali系列</h2><p><img src="/img/maliLogo.jpg" alt="maliLogo.jpg"><br>代表型号：Mali-400、Mali-T604等<br>代表作  ：三星Galaxy SII、Galaxy SIII、Galaxy Note1、Galaxy Note2(亚版)等</p>
+<h2 id="4）nVIDIA-英伟达-的Tegra系列"><a href="#4）nVIDIA-英伟达-的Tegra系列" class="headerlink" title="4）nVIDIA(英伟达)的Tegra系列"></a>4）nVIDIA(英伟达)的Tegra系列</h2><p><img src="/img/nVidiaLogo.jpg" alt="nVidiaLogo.jpg"><br>代表型号：nVIDIA Tegra2、nVIDIA Tegra3等<br>代表作  ：Google Nexus 7，HTC One X等</p>
+<h1 id="2-压缩纹理的必要性"><a href="#2-压缩纹理的必要性" class="headerlink" title="2. 压缩纹理的必要性"></a>2. 压缩纹理的必要性</h1><p>常用的图像文件格式有BMP，TGA，JPG，GIF，PNG等；<br>常用的纹理格式有R5G6B5，A4R4G4B4，A1R5G5B5，R8G8B8, A8R8G8B8等。<br>文件格式是图像为了存储信息而使用的对信息的特殊编码方式，它存储在磁盘中，或者内存中，但是并不能被GPU所识别，因为以向量计算见长的GPU对于这些复杂的计算无能为力。这些文件格式当被游戏读入后，还是需要经过CPU解压成R5G6B5，A4R4G4B4，A1R5G5B5，R8G8B8, A8R8G8B8等像素格式，再传送到GPU端进行使用。<br>纹理格式是能被GPU所识别的像素格式，能被快速寻址并采样。<br>举个例子，DDS文件是游戏开发中常用的文件格式，它内部可以包含A4R4G4B4的纹理格式，也可以包含A8R8G8B8的纹理格式，甚至可以包含DXT1的纹理格式。在这里DDS文件有点容器的意味。<br>OpenGL ES 2.0支持以上提到的R5G6B5，A4R4G4B4，A1R5G5B5，R8G8B8，A8R8G8B8等纹理格式，其中 R5G6B5，A4R4G4B4，A1R5G5B5每个像素占用2个字节(BYTE)，R8G8B8每个像素占用3个字节，A8R8G8B8每个像素占用 4个字节。<br><img src="/img/TextureFormate.jpg" alt="TextureFormate.jpg"><br>对于一张512<em>512的纹理的话，R5G6B5格式的文件需要占用512KB的容量，A8R8G8B8格式的文件需要占用1MB的容量；如果是1024</em>1024的纹理，则各需要2M和4M的容量，这对于动辄需要几十、几百张甚至更多纹理的游戏，上G容量的游戏在移动平台上是不容易被接受的(当然，还是有1、2G的大作的，里面包含了几千张的纹理)。<br>聪明的设计师们在想，有没有其他办法，既能表现丰富的色彩和细节，又能是最小失真的情况下，达到更小的纹理容量呢。压缩纹理格式应运而生(当然，并不是在移动平台后才有的产物)。</p>
+<h1 id="3-常见的压缩纹理格式"><a href="#3-常见的压缩纹理格式" class="headerlink" title="3. 常见的压缩纹理格式"></a>3. 常见的压缩纹理格式</h1><p>基于OpenGL ES的压缩纹理有常见的如下几种实现：<br>1）ETC1（Ericsson texture compression)<br>2）PVRTC (PowerVR texture compression)<br>3）ATITC (ATI texture compression)<br>4）S3TC (S3 texture compression)</p>
+<h2 id="ETC1"><a href="#ETC1" class="headerlink" title="ETC1"></a>ETC1</h2><p>ETC1格式是OpenGL ES图形标准的一部分，并且被所有的Android设备所支持。<br>扩展名为: GL_OES_compressed_ETC1_RGB8_texture，不支持透明通道，所以仅能用于不透明纹理。<br>当加载压缩纹理时，<internal format="">参数支持如下格式：<br>GL_ETC1_RGB8_OES(RGB，每个像素0.5个字节)</internal></p>
+<h2 id="PVRTC"><a href="#PVRTC" class="headerlink" title="PVRTC"></a>PVRTC</h2><p>支持的GPU为Imagination Technologies的PowerVR SGX系列。<br>OpenGL ES的扩展名为: GL_IMG_texture_compression_pvrtc。<br>当加载压缩纹理时，<internal format="">参数支持如下几种格式：<br>GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG (RGB，每个像素0.5个字节)<br>GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG (RGB，每个像素0.25个字节)<br>GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG (RGBA，每个像素0.5个字节)<br>GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG (RGBA，每个像素0.25个字节)</internal></p>
+<h2 id="ATITC"><a href="#ATITC" class="headerlink" title="ATITC"></a>ATITC</h2><p>支持的GPU为Qualcomm的Adreno系列。<br>支持的OpenGL ES扩展名为: GL_ATI_texture_compression_atitc。<br>当加载压缩纹理时，<internal format="">参数支持如下类型的纹理：<br>GL_ATC_RGB_AMD (RGB，每个像素0.5个字节)<br>GL_ATC_RGBA_EXPLICIT_ALPHA_AMD (RGBA，每个像素1个字节)<br>GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD (RGBA，每个像素1个字节)</internal></p>
+<h2 id="S3TC"><a href="#S3TC" class="headerlink" title="S3TC"></a>S3TC</h2><p>也被称为DXTC，在PC上广泛被使用，但是在移动设备上还是属于新鲜事物。支持的GPU为NVIDIA Tegra系列。<br>OpenGL ES扩展名为:GL_EXT_texture_compression_dxt1和GL_EXT_texture_compression_s3tc。<br>当加载压缩纹理时，<internal format="">的参数有如下几种格式：<br>GL_COMPRESSED_RGB_S3TC_DXT1 (RGB，每个像素0.5个字节)<br>GL_COMPRESSED_RGBA_S3TC_DXT1 (RGBA，每个像素0.5个字节)<br>GL_COMPRESSED_RGBA_S3TC_DXT3 (RGBA，每个像素1个字节)<br>GL_COMPRESSED_RGBA_S3TC_DXT5 (RGBA，每个像素1个字节)  </internal></p>
+<p>由此可见，Mali系列GPU只支持ETC1格式的压缩纹理，而且该纹理不支持透明通道，有一定局限性。<br>以上压缩纹理格式每个像素大小相对A8R8G8B8格式的比例，最高压缩比是16:1，最低压缩比是4:1，对于减小纹理的数据容量有明显作用，相应在显存带宽上也有明显优势，从而提高游戏的运行效率(此特性没有绝对数值，根据每个游戏的用法和瓶颈点不同而有差别)。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/各种移动GPU压缩纹理的使用方法/" class="archive-article-date">
+  	<time datetime="2015-08-17T14:40:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cg/">cg</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-各向异性过滤" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/各向异性过滤/">各向异性过滤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>各向异性过滤（英语：Anisotropic filtering，简称AF）是一种3D显示技术，如其名称所示，它是对周围各个方向上的像素进行取样计算后映射到目标像素上的技术。与双线性过滤和三线性过滤相比，它在大角度显示方面具有更高的精度，令画面更逼真，但计算量也更大，对显卡的要求更高。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/各向异性过滤/" class="archive-article-date">
+  	<time datetime="2015-08-17T14:31:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cg/">cg</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-OpenGL ES" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/OpenGL ES/">OpenGL ES</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OpenGL ES (OpenGL for Embedded Systems) 是OpenGL三维图形API的子集，针对手机、PDA和游戏主机等嵌入式设备而设计。该API由Khronos集团定义推广，Khronos是一个图形软硬件行业协会，该协会主要关注图形和多媒体方面的开放标准。<br>OpenGL ES是从OpenGL裁剪定制而来的，去除了glBegin/glEnd，四边形（GL_QUADS）、多边形（GL_POLYGONS）等复杂图元等许多非绝对必要的特性。经过多年发展，现在主要有两个版本:OpenGL ES 1.x 针对固定管线硬件的，OpenGL ES 2.x 针对可编程管线硬件。<br>OpenGLES 1.0 是以 OpenGL 1.3 规范为基础的，OpenGL ES 1.1 是以 OpenGL 1.5 规范为基础的，它们分别又支持 common 和 common lite 两种profile。lite profile只支持定点实数，而common profile既支持定点数又支持浮点数。 OpenGL ES 2.0 则是参照 OpenGL 2.0 规范定义的，common profile发布于2005-8，引入了对可编程管线的支持。OpenGL ES 3.0于2012年公布，加入了大量新特性。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/OpenGL ES/" class="archive-article-date">
+  	<time datetime="2015-08-17T14:25:31.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cg/">cg</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Unity3D编辑器扩展 | iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unity3D编辑器扩展">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity3D编辑器扩展">
+<meta property="og:url" content="https://iningwei.github.io/2015/08/30/Unity3D编辑器扩展/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="Unity3D编辑器扩展">
+<meta property="og:image" content="https://iningwei.github.io/img/ScriptableWizard.png">
+<meta property="og:image" content="https://iningwei.github.io/img/Editor1Player.png">
+<meta property="og:image" content="https://iningwei.github.io/img/Editor2Player.png">
+<meta property="og:image" content="https://iningwei.github.io/img/Editor3Player.png">
+<meta property="og:image" content="https://iningwei.github.io/img/DrawGizmoResult.png">
+<meta property="og:updated_time" content="2015-09-30T16:28:30.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity3D编辑器扩展">
+<meta name="twitter:description" content="Unity3D编辑器扩展">
+<meta name="twitter:image" content="https://iningwei.github.io/img/ScriptableWizard.png">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-Unity3D编辑器扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unity3D编辑器扩展
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"><a href="#本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。" class="headerlink" title="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"></a>本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。</h2><h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p>编辑器扩展这部分包括很多内容，我这里给它分成以下几类：  </p>
+<ul>
+<li>新编辑功能</li>
+<li>重写Inspector视图</li>
+<li>Scene界面交互</li>
+<li>Gizmos辅助显示<h1 id="新编辑功能"><a href="#新编辑功能" class="headerlink" title="新编辑功能"></a>新编辑功能</h1>一共三种类型，一种是使用MenuItem标识，另外两种是继承自ScriptableWizard、EditorWindow。需要注意的是MenuItem标识是后两种的基础。<h2 id="MenuItem标识"><a href="#MenuItem标识" class="headerlink" title="MenuItem标识"></a>MenuItem标识</h2>使用MenuItem标识可以为编辑器添加新的菜单,也可以为Inspector上下文添加菜单。只有静态方法可以使用该标识，该标识可以把静态方法转换为菜单命令。<br>另外可以为菜单创建快捷方式(hotkey),你可以使用如下特殊修饰字符：%(Windows系统上的ctrl,OS X系统上的cmd),#(shift),&amp;(alt)。比如快捷方式“shift-alt-g”的写法为[MenuItem(“XX/XX/XXX #&amp;g”)]。如果不需要为hotkey提供修饰符需要用字符_修饰，如快捷方式“g”的写法为[MenuItem(“XX/XX/XXX _g”)]<br>另外还可以支持一些特殊的字符：LEFT、RIGHT、UP、DOWN、F1…F12、HOME、END、PGUP、PGDN。  </li>
+</ul>
+<p>如下为示例代码:  </p>
+<pre><code>using UnityEngine;  
+using System.Collections;  
+using UnityEditor;  
+
+public class AddChild
+{
+    [MenuItem(&quot;Custom/Create Child For Selected GameObjects&quot;)]
+    static void MenuAddChild()
+    {
+        Transform[] transforms = Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.OnlyUserModifiable);
+        foreach (Transform transform in transforms)
+        {
+            GameObject aChild = new GameObject(&quot;_Child&quot;);
+            aChild.transform.parent = transform;
+        }
+    }
+    [MenuItem(&quot;Custom/Create Child For Selected GameObjects&quot;, true)]
+    static bool ValidateMenuAddChild()
+    {
+        return Selection.activeGameObject != null;
+    }
+}
+</code></pre><p>上述代码实现了为选择的GameObject添加子物体的功能。<br>函数为静态函数，函数名任意，但是第二个验证函数是固定的，必须以Validate开头，再加上前面函数的名字。<br>另外需要注意到第二个验证函数中第一个参数必须和第一个函数一致，第二个参数为true。当验证函数返回false的时候，则第一个函数对应的操作无法激活。代码所示即当没有选择GameObject的时候，Custom/Create Child For Selected GameObjects这个目录下的选项是灰化的。<br>另外MenuItem后面若是跟GameObject则选项出现在已经存在的GameObject选项栏下；<br>若跟Assets，则出现在Assets选项栏下,另外需要注意的是Assets选项栏下的操作都是可以通过在Project面板下右键具体assets来弹出选项的；<br>若跟Assets/Create则选项出现在Project视图的Create按钮下；<br>若跟”CONTEXT/具体Component名/XXX”则可以为这个具体组件的Inspector上下文添加菜单,菜单的打开方式为右键组件或者左键组件最右边的“齿轮”按钮，需要注意的是为具体组件的Inspector上下文添加菜单不支持多重层次。<br>以下代码为Inspector上下文菜单：  </p>
+<pre><code>public class AddChild
+{
+    [MenuItem(&quot;CONTEXT/Transform/Create Child For Selected GameObjects&quot;)]
+    static void MenuAddChild()
+    {
+        Transform[] transforms = Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.OnlyUserModifiable);
+        foreach (Transform transform in transforms)
+        {
+            GameObject aChild = new GameObject(&quot;_Child&quot;);
+            aChild.transform.parent = transform;
+        }
+    }
+    [MenuItem(&quot;CONTEXT/Transform/Create Child For Selected GameObjects&quot;, true)]
+    static bool ValidateMenuAddChild()
+    {
+        return Selection.activeGameObject != null;
+    }
+}
+</code></pre><p>以上代码实现了把增加子节点的功能注入到Inspector面板上Transform组件的弹出菜单中。<br>另外有时候我们需要获得Inspector上下文菜单对应的组件，这个时候需要用到<strong>MenuCommand</strong>,如下：  </p>
+<pre><code>[MenuItem(&quot;CONTEXT/Rigidbody/DoSomething&quot;)]
+static void DoSomething(OnInspectorGUI command)
+{
+    Rigidbody body=command.context;
+    body.mass=5;
+}
+</code></pre><p><strong>补充：</strong><br>MenuItem标识可以实现排序和分组的功能  </p>
+<pre><code>[MenuItem(&quot;NewMenu/Option1&quot;, false, 1)]
+private static void NewMenuOption()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option2&quot;, false, 2)]
+private static void NewMenuOption2()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option3&quot;, false, 3)]
+private static void NewMenuOption3()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option4&quot;, false, 51)]
+private static void NewMenuOption4()
+{
+}
+
+[MenuItem(&quot;NewMenu/Option5&quot;, false, 52)]
+private static void NewMenuOption5()
+{
+}
+</code></pre><p>如上述代码所示，最后的阿拉伯数字即排序所用，越小的排在越上，UnityEditor会自动分组，50为单位。</p>
+<h2 id="继承自ScriptableWizard"><a href="#继承自ScriptableWizard" class="headerlink" title="继承自ScriptableWizard"></a>继承自ScriptableWizard</h2><p>通过继承ScriptableWizard可以创建编辑器向导，Unity3D已经为我们封装好了一些变量、方法、消息。如：  </p>
+<ul>
+<li><p>变量：errorString(设置向导的错误提示信息)、helpString(设置向导的帮助提示)、isValid(可以控制向导的Create Button和Other Button能否点击)。  </p>
+</li>
+<li><p>静态方法：DisplayWizard  </p>
+</li>
+<li><p>消息：OnDrawGizmos(当向导可见的时候每帧执行，可用gizmos来实现预览的效果)、OnWizardCreate(当点击Create按钮的时候触发)、OnWizardOtherButton(当点击Other按钮的时候)、OnWizardUpdate(当向导打开的瞬间或者向导中有输入参数的变化时触发)</p>
+</li>
+</ul>
+<p>下面看一个实例代码:</p>
+<pre><code>public class CreateACube : ScriptableWizard
+{
+    public float size = 1f;//声明为public可以被向导序列化显示在界面上，从而可以自由改变它的值
+    [MenuItem(&quot;Custom/CreateACube&quot;)]
+    static void CreateACubeWizard()
+    {
+        //ScriptableWizard.DisplayWizard&lt;CreateACube&gt;(&quot;创建一个Cube&quot;, &quot;确定&quot;, &quot;取消&quot;);//这两种写法均可，要点是提供一个type，type类型为类的名字
+        ScriptableWizard.DisplayWizard(&quot;创建一个Cube&quot;, typeof(CreateACube), &quot;确定&quot;, &quot;取消&quot;);
+    }
+
+    void OnDrawGizmos()
+    {
+        if (size &lt; 3)
+        {
+            return;
+        }
+        else
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(Vector3.zero, new Vector3(size, size, size));
+        }
+    }
+
+    void OnWizardCreate()
+    {
+        GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        obj.transform.localScale = new Vector3(size, size, size);
+    }
+
+    void OnWizardOtherButton()
+    {
+        Close();
+    }
+
+    void OnWizardUpdate()
+    {
+        helpString = &quot;输入Cube的Size,Size要大于等于3,创建一个Cube&quot;;
+
+        if (size &lt; 3)
+        {
+            errorString = &quot;size要大于等于3&quot;;
+            isValid = false;
+        }
+        else
+        {
+            errorString = &quot;&quot;;
+            isValid = true;
+        }
+    }
+}
+</code></pre><p>上述代码中OnDrawGizmos()没有生效，我使用的是4.5.2f1版本的Unity，还请知道原因的告知！<br>下图为上述代码实现的向导：<br><img src="/img/ScriptableWizard.png" alt="&quot;ScriptableWizard向导&quot;"></p>
+<h2 id="继承自EditorWindow"><a href="#继承自EditorWindow" class="headerlink" title="继承自EditorWindow"></a>继承自EditorWindow</h2><p>继承自EditorWindow的类，可以实现编辑器窗口的功能。类似于Inspector、Project界面等等复杂的功能，而且可以自由镶嵌到Unity界面内，构成一定的layout。<br>如下代码为在集成自EditorWindow的类中实现上述创建一个Size&gt;=3的Cube的功能： </p>
+<pre><code>public class CreateACube2 : EditorWindow
+{
+    float size = 1f;
+    string helpString = &quot;输入Cube的Size,Size要大于等于3,创建一个Cube&quot;;
+    string errorString = &quot;size需要大于等于3&quot;;
+    bool enableConfromButton = false;
+    static Color originColor;
+    [MenuItem(&quot;Custom/CreateACube2&quot;)]
+    static void Init()
+    {
+        //获取已经打开的window,如果不存在则new一个
+        CreateACube2 window = EditorWindow.GetWindow(typeof(CreateACube2)) as CreateACube2;
+        originColor = GUI.color;
+    }
+
+    void OnGUI()
+    {
+        GUILayout.Label(helpString, EditorStyles.boldLabel);
+        size = EditorGUILayout.FloatField(&quot;size:&quot;, size);
+
+        enableConfromButton = size &gt;= 3 ? true : false;
+        if (enableConfromButton)
+        {
+            GUI.enabled = true;
+        }
+        else
+        {
+            GUI.enabled = false;//设置error的时候Button按钮不可点击
+            GUI.color=Color.red;//设置errorString的颜色为红色
+            GUILayout.Label(errorString);
+        }
+        GUI.color = originColor;
+        if (GUILayout.Button(&quot;确定&quot;))
+        {
+            DoCreate();
+        }
+    }
+
+    void DoCreate()
+    {
+        GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        obj.transform.localScale = new Vector3(size, size, size);
+    }
+} 
+</code></pre><p>OnGUI消息是继承自EditorWindow类的最重要的消息，在其内部可以自己来创建GUI。另外还有一些比较重要的消息：  </p>
+<ul>
+<li>OnDestroy()当EditorWindow关闭的时候触发。</li>
+<li>OnFocus()当Window获得焦点触发。</li>
+<li>OnHierarchyChange()当Hierarchy面板内有改变的时候触发。</li>
+<li>OnInspectorUpdate()每秒十帧的触发，来判断Inspector界面是否有改变。</li>
+<li>OnLostFocus()当Window失去焦点触发。</li>
+<li>Update()每秒100次的触发，在所有可见的Windows。<br>还有一些好用的消息，变量，静态方法，方法…具体查看文档。</li>
+</ul>
+<h1 id="重写Inspector视图"><a href="#重写Inspector视图" class="headerlink" title="重写Inspector视图"></a>重写Inspector视图</h1><p>重写Inspector视图，是最强大的一种编辑器扩展。下面以一个最简单的实例来说明如何使用。<br>我们定义一个Player:  </p>
+<pre><code>public class Player : MonoBehaviour
+{    
+    public int armor = 75;
+    public int damage = 20;
+    public GameObject gun;
+}    
+</code></pre><p>把脚本拖拽到GameObject作为Component后其对应的Inspector界面如下：<br><img src="/img/Editor1Player.png" alt="&quot;普通状态下的Inspector界面&quot;"><br>为了实现重写Inspector视图的目地，我们新建一个脚本PlayerEditor.cs，继承自Editor，且把脚本放到Editor目录下。代码如下：</p>
+<pre><code>[CanEditMultipleObjects]
+[CustomEditor(typeof(Player))]
+public class PlayerEditor : Editor
+{
+    SerializedProperty armorProp;
+    SerializedProperty damageProp;
+    SerializedProperty gunProp;
+
+    void OnEnable()
+    {
+        armorProp = serializedObject.FindProperty(&quot;armor&quot;);
+        damageProp = serializedObject.FindProperty(&quot;damage&quot;);
+        gunProp = serializedObject.FindProperty(&quot;gun&quot;);
+    }
+
+    public override void OnInspectorGUI()
+    {
+        //更新serializedProperty，一般在OnInspector函数的一开始使用。
+        serializedObject.Update();
+
+        //依次重写Player.cs脚本中的armor,damage,gun
+        EditorGUILayout.IntSlider(armorProp, 0, 100, new GUIContent(&quot;Armor&quot;));
+        if (!armorProp.hasMultipleDifferentValues)//当该值相同的时候才显示ProgressBar
+        {
+            ProgressBar(armorProp.intValue / 100.0f, &quot;ArmorCount&quot;);
+        }
+
+        EditorGUILayout.IntSlider(damageProp, 0, 100, new GUIContent(&quot;Damage&quot;));
+        if (!damageProp.hasMultipleDifferentValues)
+        {
+            ProgressBar(damageProp.intValue / 100.0f, &quot;DamagePower&quot;);
+        }
+
+        EditorGUILayout.PropertyField(gunProp, new GUIContent(&quot;Gun Object&quot;));
+
+        //使更改生效（对于使用了SerializedProperty、SerializedObject）
+        serializedObject.ApplyModifiedProperties();
+    }
+
+    private void ProgressBar(float value, string str)
+    {
+        Rect rect = GUILayoutUtility.GetRect(18, 18, &quot;TextField&quot;);
+        EditorGUI.ProgressBar(rect, value, str);
+        EditorGUILayout.Space();
+    }
+}
+</code></pre><p>下图为以上代码重写后的界面：<br><img src="/img/Editor2Player.png" alt="&quot;重写Inspector界面# 2 #&quot;"><br>实现Inspector重写的方式有多种，上述代码使用了推荐的SerializedProperty和SerializedObject来实现<br>上述代码需要解释的地方有如下几点：</p>
+<ul>
+<li><p>[CustomEditor(typeof(Player))] 这个编辑器属性可以把Editor脚本和原始cs脚本建立关系，从而实现重写。</p>
+</li>
+<li><p>[CanEditMultipleObjects] 使用了这个编辑器属性，可以确保当选择的多个物体具有相同组件的时候不会报错“Multi-object editing not supported”，而且可以支持多个物体编辑。</p>
+</li>
+<li><p>OnInspectorGUI() 重写该方法可以实现对默认Inspector界面的重写。该方法也是最常用的一个方法。</p>
+</li>
+<li><p>GUILayoutUtility.GetRect(18, 18, “TextField”) 该方法的作用??????</p>
+</li>
+</ul>
+<p>另一种不是通过SerializedProperty、SerializedObject方法来实现的代码如下：  </p>
+<pre><code>[CanEditMultipleObjects]
+[CustomEditor(typeof(Player))]
+public class PlayerEditor : Editor
+{
+    Player player;
+
+    void OnEnable()
+    {
+        player = target as Player;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        player.armor = EditorGUILayout.IntSlider(&quot;Armor&quot;, player.armor, 0, 100);
+        ProgressBar(player.armor / 100f, &quot;ArmorCount&quot;);
+
+        player.damage = EditorGUILayout.IntSlider(&quot;Damage&quot;, player.damage, 0, 100);
+        ProgressBar(player.damage / 100f, &quot;DamagePower&quot;);
+
+        bool allowSceneObjects = !EditorUtility.IsPersistent(player);
+        player.gun = EditorGUILayout.ObjectField(&quot;Gun Object&quot;, player.gun, typeof(GameObject), allowSceneObjects) as GameObject;
+    }
+
+    private void ProgressBar(float value, string str)
+    {
+        Rect rect = GUILayoutUtility.GetRect(18, 18, &quot;TextField&quot;);
+        EditorGUI.ProgressBar(rect, value, str);
+        EditorGUILayout.Space();
+    }
+}
+</code></pre><p>下图为以上代码重写后的界面：<br><img src="/img/Editor3Player.png" alt="&quot;重写Inspector界面2&quot;">  </p>
+<p>上述代码中需要说明的地方：</p>
+<ul>
+<li>EditorUtility.IsPersistent(player) 该方法获得目标物体是否存在disk上。官方的解释为：Typically assets like prefabs, textures, audio clips, animation clips, materials are stored on disk.Returns false if the object lives in the scene. Typically this is a game object or component but it could also be a material that was created from code and not stored in an asset but instead stored in the scene.因此EdiotrUtility.IsPersistent(player)返回结果为false。</li>
+</ul>
+<p>补充一些在OnInspectorGUI()方法中常用到的方法：</p>
+<ul>
+<li><p>DrawDefaultInspector() 绘制默认的对应脚本中的Inspector，常用于扩展一个已经存在的组件：比如想在Camera组件上添加个按钮，实现特殊功能，则可以写个类用[CustomEditor(typeof(Camera))]和Camera建立关系，然后在OnInspector()中先调用DrawDefaultInspector(),然后再添加需要的按钮之类的。</p>
+</li>
+<li><p>EditorGUILayout.Separator() 一个比较大的空行</p>
+</li>
+<li><p>EditorGUILayout.Space() 一个比较小的空行</p>
+</li>
+<li><p>GUILayout.Space(10f) 可控具体空多少行</p>
+</li>
+<li><p>GUILayout.BeginHorizontal()和GUILayout.EndHorizontal() 二者一起可以让内部GUI水平排列。同理还有Vertical。 </p>
+</li>
+</ul>
+<h1 id="Scene界面交互"><a href="#Scene界面交互" class="headerlink" title="Scene界面交互"></a>Scene界面交互</h1><p>Scene界面内的交互在上述Inspector重写的基础上进行，前戏步骤同上，用到的要点姿势有如下一些：<br>在上述OnEnable()函数中提供一个委托<code>SceneView.OnSceneGUIDelegate=SomeFuction;</code><br>在方法SomeFuction(SceneView sceneView)中进行当Scene窗口获得焦点后的具体操作。通常需要获得一个当前交互的事件，比如<code>Event e= Event.current;</code>然后通过判断e.isKey、e.character==”p”之类的来获得键盘操作。<br>有时我们会在Inspector界面内点击了某个按钮后触发Scene界面的交互，这个时候需要强制获得Scene的焦点。可以使用<code>(SceneView.sceneViews[0] as SceneView).Focus();</code>。<br>必要的地方需要使用<code>SceneView.RepaintAll();</code>来即时刷新Scene窗口。<br>Scene界面内获得当前鼠标所在位置发射的射线：<code>Ray ray=HandleUtility.GUIPointToWorldRay(e.mousePosition);</code><br>Scene内世界坐标转换为屏幕GUI坐标:<code>HandleUtility.WorldToGUIPoint(worldPos);</code></p>
+<h2 id="OnSceneGUI"><a href="#OnSceneGUI" class="headerlink" title="OnSceneGUI"></a>OnSceneGUI</h2><p>OnSceneGUI()是进行Scene界面交互一个重要消息，可以用GUI的形式在其内部绘制Scene界面交互结果信息。一个简单的例子如下，注意必须当选中带有该脚本对应的组件物体时，该消息才触发：  </p>
+<pre><code>void OnSceneGUI()
+{
+    Handles.BeginGUI();//绘制必须使用BeginGUI()和EndGUI()，否则不显示。
+    var guiPoint = HandleUtility.WorldToGUIPoint(Vector3.zero);
+    GUI.Box(new Rect(guiPoint.x - 50, guiPoint.y - 30, 100, 60), &quot;你好&quot;);
+    GUI.Button(new Rect(200, 200, 200, 100), &quot;Button&quot;);
+    Handles.EndGUI();
+}
+</code></pre><h1 id="Gizmos辅助显示"><a href="#Gizmos辅助显示" class="headerlink" title="Gizmos辅助显示"></a>Gizmos辅助显示</h1><p>绘制Gizmos一般使用void OnDrawGizmos()方法，继承自MonoBehaviour和Scriptwizard都有该方法。<br>另外还有一种DrawGizmo方法，也是一种通过编辑器属性来设定的,如下建立一个TestDrawGizmo.cs的脚本，放到Editor目录下。和OnSceneGUI()不同的是可以做到不需要选中物体便可以显示相关信息：  </p>
+<pre><code>public class TestDrawGizmo
+{
+    [DrawGizmo(GizmoType.NotSelected | GizmoType.Pickable | GizmoType.SelectedOrChild)]
+    static void RenderLightGizmo(Light light, GizmoType gizmoType)
+    {
+        Handles.Label(light.transform.position, light.transform.gameObject.name);
+        Gizmos.DrawIcon(light.transform.position + Vector3.up, &quot;Light.png&quot;);        
+        if ((gizmoType &amp; GizmoType.SelectedOrChild) != 0)
+        {
+            if ((gizmoType &amp; GizmoType.Active) != 0)
+            {
+                Gizmos.color = Color.red*0.4f;
+            }
+            else
+                Gizmos.color = Color.red * 0.5f;
+
+            Gizmos.DrawSphere(light.transform.position, light.range);
+        }
+    }
+}    
+</code></pre><p>结果如下：<br><img src="/img/DrawGizmoResult.png" alt="&quot;DrawGizmo结果&quot;"></p>
+<p><strong>补充知识</strong><br>类的继承关系<br>ScriptableWizard:EditorWindow:ScriptableObject:Object:UnityEngine<br>Editor:ScriptableObject:Object:UnityEngine </p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/30/Unity3D编辑器扩展/" class="archive-article-date">
+  	<time datetime="2015-08-29T17:24:24.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-30</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编辑器扩展/">编辑器扩展</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2015/09/03/ulua学习笔记1-环境搭建和基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ulua学习笔记1-环境搭建和基础知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/17/Unity3D行结束符相关问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Unity3D行结束符相关问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Unity3D优化总结 | iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unity3D优化总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity3D优化总结">
+<meta property="og:url" content="https://iningwei.github.io/2015/10/03/Unity3D优化总结/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="Unity3D优化总结">
+<meta property="og:updated_time" content="2015-10-03T10:26:33.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity3D优化总结">
+<meta name="twitter:description" content="Unity3D优化总结">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-Unity3D优化总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unity3D优化总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>不要使用OnGUI()，它很慢，非常慢。</li>
+<li>当需要频繁修改物体的localScale时，移除其collider组件，否则会非常影响帧率。</li>
+<li>使用OnBecameVisible()/OnBecameInvisible()配对使用修改enabled属性，使得只有在对象可见时脚本才会执行。<br>（物体不可见的时候drawcall是降低了，但是若自身带有脚本，还是执行的~~~）</li>
+<li>使用InvokeRepeating()代替Update()处理不需要实时的数据更新。</li>
+<li>使用对象池GameObjectPool缓存频繁使用的对象。</li>
+</ol>
+<p>IOS平台优化建议<br>•    Keep vertex count below:<br>•    40K per frame when targeting iPhone 3GS and newer devices (with SGX GPU)<br>•    10K per frame when targeting older devices (with MBX GPU)<br>•    Keep the number of different materials per scene low - share as many materials between different objects as possible.<br>•    Set Static property on a non-moving objects to allow internal optimizations.<br>•    Use PVRTC formats for textures when possible, otherwise choose 16bit textures over 32bit.<br>•    Use combiners or pixel shaders to mix several textures per fragment instead of multi-pass approach.<br>•    If writing custom shaders, always use smallest possible floating-point types:<br>•    fixed / lowp – perfect for color, lighting information and normals,<br>•    half / mediump – for texture UV coordinates,<br>•    float / highp – avoid in pixel shaders, fine to use in vertex shader for vertex position calculations.<br>•    Minimize use of complex mathematical operations such as pow, sin, cos etc in pixel shaders.<br>•    Do not use Pixel Lights when it is not necessary – choose to have only a single (preferably directional) pixel light affecting your geometry.<br>•    Do not use dynamic lights when it is not necessary – choose baking lighting instead.<br>•    Choose to use less textures per fragment.<br>•    Avoid alpha-testing, choose alpha-blending instead.<br>•    Do not use fog when it is not necessary.<br>•    Learn benefits of Occlusion culling and use it to reduce amount of visible geometry and draw-calls in case of complex static scenes with lots of occlusion. Plan your levels to benefit from Occlusion culling.<br>•    Use skyboxes to “fake” distant geometry.<br>更多优化相关的知识：官网<br><a href="http://docs.unity3d.com/Documentation/Manual/OptimizingGraphicsPerformance.html" target="_blank" rel="external">http://docs.unity3d.com/Documentation/Manual/OptimizingGraphicsPerformance.html</a>
+ </p>
+<h1 id="Modeling-Characters-for-Optimal-Performance"><a href="#Modeling-Characters-for-Optimal-Performance" class="headerlink" title="Modeling Characters for Optimal Performance"></a>Modeling Characters for Optimal Performance</h1><p>Below are some tips for designing character models to give optimal rendering speed.</p>
+<h2 id="Use-a-Single-Skinned-Mesh-Renderer"><a href="#Use-a-Single-Skinned-Mesh-Renderer" class="headerlink" title="Use a Single Skinned Mesh Renderer"></a>Use a Single Skinned Mesh Renderer</h2><p>You should use only a single skinned mesh renderer for each character. Unity optimizes animation using visibility culling and bounding volume updates and these optimizations are only activated if you use one animation component and one skinned mesh renderer in conjunction. The rendering time for a model could roughly double as a result of using two skinned meshes in place of a single mesh and there is seldom any practical advantage in using multiple meshes.</p>
+<h2 id="Use-as-Few-Materials-as-Possible"><a href="#Use-as-Few-Materials-as-Possible" class="headerlink" title="Use as Few Materials as Possible"></a>Use as Few Materials as Possible</h2><p>You should also keep the number of materials on each mesh as low as possible. The only reason why you might want to have more than one material on a character is that you need to use different shaders for different parts (eg, a special shader for the eyes). However, two or three materials per character should be sufficient in almost all cases.</p>
+<h2 id="Use-as-Few-Bones-as-Possible"><a href="#Use-as-Few-Bones-as-Possible" class="headerlink" title="Use as Few Bones as Possible"></a>Use as Few Bones as Possible</h2><p>A bone hierarchy in a typical desktop game uses somewhere between fifteen and sixty bones. The fewer bones you use, the better the performance will be. You can achieve very good quality on desktop platforms and fairly good quality on mobile platforms with about thirty bones. Ideally, keep the number below thirty for mobile devices and don’t go too far above thirty for desktop games.</p>
+<h2 id="Polygon-Count"><a href="#Polygon-Count" class="headerlink" title="Polygon Count"></a>Polygon Count</h2><p>The number of polygons you should use depends on the quality you require and the platform you are targeting. For mobile devices, somewhere between 300 and 1500 polygons per mesh will give good results, whereas for desktop platforms the ideal range is about 1500 to 4000. You may need to reduce the polygon count per mesh if the game can have lots of characters onscreen at any given time. As an example, Half Life 2 used 2500-5000 triangles per character. Current AAA games running on the PS3 or Xbox 360 usually have characters with 5000-7000 triangles.</p>
+<h2 id="Keep-Forward-and-Inverse-Kinematics-Separate"><a href="#Keep-Forward-and-Inverse-Kinematics-Separate" class="headerlink" title="Keep Forward and Inverse Kinematics Separate"></a>Keep Forward and Inverse Kinematics Separate</h2><p>When animations are imported, a model’s inverse kinematic (IK) nodes are baked into forward kinematics (FK) and as a result, Unity doesn’t need the IK nodes at all. However, if they are left in the model then they will have a CPU overhead even though they don’t affect the animation. You can delete the redundant IK nodes in Unity or in the modeling tool, according to your preference. Ideally, you should keep separate IK and FK hierarchies during modeling to make it easier to remove the IK nodes when necessary.</p>
+<h2 id="Simple-Checklist-to-make-Your-Game-Faster"><a href="#Simple-Checklist-to-make-Your-Game-Faster" class="headerlink" title="Simple Checklist to make Your Game Faster"></a>Simple Checklist to make Your Game Faster</h2><p>•    Keep vertex count below 200K..3M per frame when targetting PCs, depending on the target GPU<br>•    If you’re using built-in shaders, pick ones from Mobile or Unlit category. They work on non-mobile platforms as well; but are simplified and approximated versions of the more complex shaders.<br>•    Keep the number of different materials per scene low - share as many materials between different objects as possible.<br>•    Set Static property on a non-moving objects to allow internal optimizations like static batching.<br>•    Do not use Pixel Lights when it is not necessary - choose to have only a single (preferably directional) pixel light affecting your geometry.<br>•    Do not use dynamic lights when it is not necessary - choose to bake lighting instead.<br>•    Use compressed texture formats when possible, otherwise prefer 16bit textures over 32bit.<br>•    Do not use fog when it is not necessary.<br>•    Learn benefits of Occlusion Culling and use it to reduce amount of visible geometry and draw-calls in case of complex static scenes with lots of occlusion. Plan your levels to benefit from ccclusion culling.<br>•    Use skyboxes to “fake” distant geometry.<br>•    Use pixel shaders or texture combiners to mix several textures instead of a multi-pass approach.<br>•    If writing custom shaders, always use smallest possible floating point format:<br>o    fixed / lowp - for colors, lighting information and normals,<br>o    half / mediump - for texture UV coordinates,<br>o    float / highp - avoid in pixel shaders, fine to use in vertex shader for position calculations.<br>•    Minimize use of complex mathematical operations such as pow, sin, cos etc. in pixel shaders.<br>•    Choose to use less textures per fragment.</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/10/03/Unity3D优化总结/" class="archive-article-date">
+  	<time datetime="2015-10-03T10:23:27.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2015/10/03/Unity3D Navmesh杂记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Unity3D Navmesh杂记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/03/Unity3D相关的各种文件目录/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Unity3D相关的各种文件目录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Unity3D mecanim杂记 | iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unity3D mecanim杂记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity3D mecanim杂记">
+<meta property="og:url" content="https://iningwei.github.io/2015/10/04/Unity3D mecanim杂记/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="Unity3D mecanim杂记">
+<meta property="og:image" content="https://iningwei.github.io/img/normalized time.png">
+<meta property="og:image" content="https://iningwei.github.io/img/animation clip inspector.png">
+<meta property="og:image" content="https://iningwei.github.io/img/blend tree1.png">
+<meta property="og:image" content="https://iningwei.github.io/img/blend tree2.png">
+<meta property="og:image" content="https://iningwei.github.io/img/blend tree3.png">
+<meta property="og:image" content="https://iningwei.github.io/img/blend tree4.png">
+<meta property="og:image" content="https://iningwei.github.io/img/shoot model.png">
+<meta property="og:image" content="https://iningwei.github.io/img/mask blending type.png">
+<meta property="og:image" content="https://iningwei.github.io/img/root transform rotation basedupon.png">
+<meta property="og:image" content="https://iningwei.github.io/img/add curves.png">
+<meta property="og:image" content="https://iningwei.github.io/img/add many events.png">
+<meta property="og:image" content="https://iningwei.github.io/img/Add events.png">
+<meta property="og:image" content="https://iningwei.github.io/img/any state 2 death.png">
+<meta property="og:image" content="https://iningwei.github.io/img/trigger inspector.png">
+<meta property="og:updated_time" content="2015-10-04T15:28:14.288Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity3D mecanim杂记">
+<meta name="twitter:description" content="Unity3D mecanim杂记">
+<meta name="twitter:image" content="https://iningwei.github.io/img/normalized time.png">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-Unity3D mecanim杂记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unity3D mecanim杂记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下皆以4.5左右版本Unity3D为准</p>
+<h1 id="1：Layer"><a href="#1：Layer" class="headerlink" title="1：Layer"></a>1：Layer</h1><p>Mecanim的layer可以在一个角色上播放超过一个动画。<br>较高的layer会盖过下面的layer, 不过layer 0以外的layer weight预设是0, 要set为1才会播放。<br>例如layer 0是站立或跑走的动画 layer 1是 挥剑的动画<br>用body mask控制layer 1只影响上半身<br>脚本中要挥剑就 Animator.SetLayerWeight(1,1f);<br>完成后Animator.SetLayerWeight(1,0f); </p>
+<p>base layer以上的新layer初始的weight值是0, 一定要用script將weight改成1才可以播动画<br>当base layer和new layer同時播放影响同一关节的动画时,会只播放层数高的layer  </p>
+<p>这些后来增加的层的权重在运行的时候默认是0的，也就是没有影响，需要自己在初始化的时候或者特定需要的时候设定层的权重。（使用animator.SetLayerWeight）</p>
+<p><a href="http://docs.unity3d.com/Documentation/Components/class-AvatarBodyMask.html/" target="_blank" rel="external">http://docs.unity3d.com/Documentation/Components/class-AvatarBodyMask.html/</a><br><a href="http://docs.unity3d.com/Documentation/Manual/AnimationLayers.html/" target="_blank" rel="external">http://docs.unity3d.com/Documentation/Manual/AnimationLayers.html/</a></p>
+<h1 id="2：AnimatorStateInfo"><a href="#2：AnimatorStateInfo" class="headerlink" title="2：AnimatorStateInfo"></a>2：AnimatorStateInfo</h1><pre><code>AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+if (stateInfo.IsName(&quot;Base Layer.RifleIdle&quot;))
+{
+    //Debug.Log(&quot;stateInfo.length:&quot; + stateInfo.length);
+    //Debug.Log(&quot;stateInfo.normalizedTime:&quot; + stateInfo.normalizedTime);
+    //if (stateInfo.normalizedTime &gt;= stateInfo.length)
+    if (stateInfo.normalizedTime &gt;= 0.01f)
+    {
+        gun.transform.parent = leftHand.transform;//先设置父子关系，再设置位置和旋转。否则会出现闪烁。
+        gun.transform.localPosition = leftHandLocalPos;
+        gun.transform.localRotation = Quaternion.Euler(leftHandLocalRotation);
+    }
+}
+</code></pre><p>Animator.GetCurrentAnimatorStateInfo（int layerIndex）//注意该函数最好在update中调用，返回的才是当前实时的animatorStateInfo。若放在Start函数中调用的话，获得的只是启动时候的状态~</p>
+<p><strong>AnimatorStateInfo.normalizedTime</strong><br>Normalized time of the State.<br>The integer part is the number of time a state has been looped. The fractional part is the % (0-1) of progress in the current loop<br><img src="/img/normalized time.png" alt="normalized time"></p>
+<p><strong>AnimatorStateInfo.length</strong><br>Current duration of the state.<br>In seconds Can vary when the State contains a Blend Tree.</p>
+<h1 id="3：Animation-Clip-Inspector"><a href="#3：Animation-Clip-Inspector" class="headerlink" title="3：Animation Clip Inspector"></a>3：Animation Clip Inspector</h1><p><a href="http://docs.unity3d.com/Documentation/Manual/RootMotion.html/" target="_blank" rel="external">http://docs.unity3d.com/Documentation/Manual/RootMotion.html/</a><br><a href="http://docs.unity3d.com/Documentation/Components/class-AnimationClip.html/" target="_blank" rel="external">http://docs.unity3d.com/Documentation/Components/class-AnimationClip.html/</a><br><img src="/img/animation clip inspector.png" alt="Animation clip inspector"><br>Bake Into pose勾选后，人物就不能跟随动画进行位置的改变相应。<br>不勾选，人物可以跟随动画进行相应位置的改变。</p>
+<h1 id="4：Overriding-Root-Motion"><a href="#4：Overriding-Root-Motion" class="headerlink" title="4：Overriding Root Motion"></a>4：Overriding Root Motion</h1><p><strong>MonoBehaviour.OnAnimatorMove()</strong><br>Callback for processing animation movements for modifying root motion.<br>This callback will be invoked at each frame after the state machines and the animations have been evaluated, but before OnAnimatorIK.</p>
+<pre><code>public class Example : MonoBehaviour {
+    void OnAnimatorMove() {
+          Animator animator = GetComponent&lt;Animator&gt;();
+        if (animator) {
+            Vector3 newPosition = transform.position;
+            newPosition.z += animator.GetFloat(&quot;Runspeed&quot;) * Time.deltaTime;
+            transform.position = newPosition;
+        }    
+    }
+}
+</code></pre><p>一个常规的通过characterController控制移动的写法:  </p>
+<pre><code>void OnAnimatorMove()
+{
+    Vector3 deltaPosition = animator.deltaPosition;
+    if (controller.isGrounded)
+    {
+        xVelocity = animator.GetFloat(&quot;Speed&quot;) * controller.velocity.x * 0.25f;
+        zVelocity = animator.GetFloat(&quot;Speed&quot;) * controller.velocity.z * 0.25f;
+    }
+    verticalSpeed += Physics.gravity.y * Time.deltaTime;
+    if (verticalSpeed &lt;= 0)
+    {
+        animator.SetBool(&quot;Jump&quot;, false);
+    }
+
+    deltaPosition.y = verticalSpeed * Time.deltaTime;
+    if (!controller.isGrounded)
+    {
+        deltaPosition.x = xVelocity * Time.deltaTime;
+        deltaPosition.z = zVelocity * Time.deltaTime;
+    }
+    controller.Move(deltaPosition);
+
+    if ((controller.collisionFlags &amp; CollisionFlags.Below) != 0)
+    {
+        verticalSpeed = 0;
+    }
+
+    transform.rotation = animator.rootRotation;
+}
+</code></pre><h1 id="5-OnAnimatorIK-int-layerIndex"><a href="#5-OnAnimatorIK-int-layerIndex" class="headerlink" title="5 :OnAnimatorIK(int layerIndex)"></a>5 :OnAnimatorIK(int layerIndex)</h1><p>常用方法：<br>animator.SetIKPosition(AvatarIKGoal.LeftHand,…);<br>animator.SetIKPositionWeight();</p>
+<p>animator.SetIKRotation<br>animator.SetIKRotationWeight</p>
+<p>animator.SetLookAtPosition<br>animator.SetLookAtWeight
+ </p>
+<h1 id="6：一些技巧："><a href="#6：一些技巧：" class="headerlink" title="6：一些技巧："></a>6：一些技巧：</h1><h2 id="6-1：控制blendTree中motion的动画速度"><a href="#6-1：控制blendTree中motion的动画速度" class="headerlink" title="6.1：控制blendTree中motion的动画速度"></a>6.1：控制blendTree中motion的动画速度</h2><p><img src="/img/blend tree1.png" alt="blend tree1"><br>FireStatus参数控制，是蹲下射击还是站立射击。</p>
+<p><img src="/img/blend tree2.png" alt="blend tree2"><br>如上图，通过修改绿色圈的速度可以修改该动画的播放速度，从而提高射击速度。但是目前版本4.3还没有提供直接的api用代码控制它。虽然可以通过设置animator.Speed来整体提高速度，但是会影响到其它动画，可控性很低。<br>可以通过每个动画单独设置一个blendTree,该blendTree使用两个motion,且这两个motion都添加这个动画，然后设置最低速度、最大速度。然后用一个float型变量控制在这两个motion之间切换。如下图：  </p>
+<p><img src="/img/blend tree3.png" alt="blend tree3">  </p>
+<p><img src="/img/blend tree4.png" alt="blend tree4"><br>这样在程序里结合使用FireSpeed参数来控制射击速度了。</p>
+<h2 id="6-2：动画覆盖时候的参数设置解决覆盖扭曲的问题，如站立射击，跑动射击"><a href="#6-2：动画覆盖时候的参数设置解决覆盖扭曲的问题，如站立射击，跑动射击" class="headerlink" title="6.2：动画覆盖时候的参数设置解决覆盖扭曲的问题，如站立射击，跑动射击"></a>6.2：动画覆盖时候的参数设置解决覆盖扭曲的问题，如站立射击，跑动射击</h2><p>这里以站立射击，跑动射击为例说明。涉及到的动作有：站立idle状态，站立射击状态，跑动瞄准状态，跑动射击状态。如下图（跑动射击和跑动瞄准不容易区分这里不示意了）。</p>
+<p><img src="/img/shoot model.png" alt="模型动作示例图"><br>常规做法是站立、跑动放一个layer，射击动作新建一个layer，通过mask，使得下半身不动。调整weight为1，使得射击动作的层覆盖weight较低的层（base layer的weight为0），这里注意一点，weight不一定设置为1，weight值越高则可以覆盖低weight的动作，而且weight值还形象自身动作的力度，weight=1,则按照最大动作幅度表现动作，weight=0.5则动作幅度只有原来的一半。<br>需要注意射击层的Blending属性。  </p>
+<p><img src="/img/mask blending type.png" alt="mask blending type"><br>Additive是在原来动作的基础上只添加新的动作。<br>Override是覆盖原来动作。<br>如从站立过渡到站立射击状态，若这里选择的是Additive。相对于站立动作，射击动作就一个手部的抖动，因此现在的动作就是站立手部抖动，看起来蛋疼且莫名其妙。若选择的是Override,一切完好。若非要用Additive不可，那么还需要一个站立瞄准的动作，切换到射击状态前，确保人物已经切换到站立瞄准的状态了，这样在站立瞄准的基础上Additive的射击就不会蛋疼了。<br>跑动射击的话，我们在跑动瞄准的基础上Additive射击的动作自然没有问题，问题是若使用Override方式的话，很蛋疼。上半身枪口的指向不再是正前方。。。个人猜测是跑动瞄准的脊柱和射击动作的脊柱不一致吧。。。</p>
+<h2 id="6-3：RootTransform-Rotation-BasedUpon参数设置"><a href="#6-3：RootTransform-Rotation-BasedUpon参数设置" class="headerlink" title="6.3：RootTransform Rotation   BasedUpon参数设置"></a>6.3：RootTransform Rotation   BasedUpon参数设置</h2><p><img src="/img/root transform rotation basedupon.png" alt="BasedUpon参数"><br>Original的提示是：Keep the rotation as it is authored in the source file<br>Body Oritation的提示是：Keeps the upper body pointing forward</p>
+<h2 id="6-4-不要把Unity3D工程A中的中的fbx文件拷贝供其它工程使用"><a href="#6-4-不要把Unity3D工程A中的中的fbx文件拷贝供其它工程使用" class="headerlink" title="6.4 不要把Unity3D工程A中的中的fbx文件拷贝供其它工程使用"></a>6.4 不要把Unity3D工程A中的中的fbx文件拷贝供其它工程使用</h2><p>这样做在另一个工程中会出现很多意想不到的现象，别的工程要用的话，必须使用源fbx文件。</p>
+<h2 id="6-5-Mask-Curves-Events"><a href="#6-5-Mask-Curves-Events" class="headerlink" title="6.5 Mask,Curves, Events"></a>6.5 Mask,Curves, Events</h2><p>具体哪个版本的Unity3D为导入的动作加入了这几个东西，已经记不得了。</p>
+<h3 id="6-5-1-Mask"><a href="#6-5-1-Mask" class="headerlink" title="6.5.1 Mask"></a>6.5.1 Mask</h3><p>略</p>
+<h3 id="6-5-2-Curves"><a href="#6-5-2-Curves" class="headerlink" title="6.5.2 Curves"></a>6.5.2 Curves</h3><p>Curves和Events都是一个动作上可以添加多个的。<br>Curves通过添加曲线来控制动画各个部位的播放速度。<br>一个动作添加了多个Curve的话，会取均值？？<br>如下图添加了一个叫做RollCurve的Curve，若动作的Animator Controller也声明了float型的“RollCurve”动作，则这个两个便挂钩了。在程序中可以获得当前Curve的值<br><img src="/img/add curves.png" alt="add curves"><br>Debug.Log(“rollCurveValue is:”+animator.GetFloat(“RollCurve”));<br>详见：<a href="http://docs.unity3d.com/Documentation/Manual/AnimatorCurves.html/" target="_blank" rel="external">http://docs.unity3d.com/Documentation/Manual/AnimatorCurves.html/</a></p>
+<h3 id="6-5-3-Events"><a href="#6-5-3-Events" class="headerlink" title="6.5.3 Events"></a>6.5.3 Events</h3><p>可以为动作添加事件，当动作运行到添加事件的时间点后，会触发事件的执行，同样一个动作上可以添加多个事件，满足条件的时候都会执行的。<br><img src="/img/add many events.png" alt="add many events"><br>下图为添加事件的窗口。Function后的textbox对应动作控制脚本上的函数名称，该函数对public还是private没有要求，但是该函数只能带0个或者1个参数，参数类型如下图。<br><img src="/img/Add events.png" alt="Add events"></p>
+<h2 id="6-6-Any-State-gt-Death需要注意的事项"><a href="#6-6-Any-State-gt-Death需要注意的事项" class="headerlink" title="6.6 Any State-&gt;Death需要注意的事项"></a>6.6 Any State-&gt;Death需要注意的事项</h2><p>默认从Any State到其它状态添加了动作转换过渡后，默认条件如下图：<br><img src="/img/any state 2 death.png" alt="any state 2 death"><br>但是该条件一运行便会执行。于是我们想通过某个bool变量如isDeath来控制，于是删除Exit Time这个条件，只使用bool变量来控制。结果是动作会来回一直闪烁，非常奇怪。解决方案是保留该Exit Time条件，根据需要 调节后面的时间，然后结合bool变量来控制</p>
+<h2 id="6-7-移除动作模型保留动作文件，无法减少占用空间"><a href="#6-7-移除动作模型保留动作文件，无法减少占用空间" class="headerlink" title="6.7 移除动作模型保留动作文件，无法减少占用空间"></a>6.7 移除动作模型保留动作文件，无法减少占用空间</h2><p>由于要在unity3d中调相关的参数，一般从3dsmax中导出的fbx都是带有模型的动作。在unity3d中做好一切工作后，想着可以ctrl+d把动作文件从模型中复制出来（选中动作文件，ctrl+d会自动复制一个到project目录中），然后删除原来的模型，达到减少安装包大小的目地。事实上测试了，无法。Unity其实已经做了相关的优化的，打包的时候打入的就是动作文件， 而不是包括冗余的模型。<br>需要注意的是，再修改相关参数的话就没法了…需要重新导入模型文件…<br>另一方面，6.5中提到的设置的events事件在模型文件被删除后依旧会保留的，只是我们看不到了，无法编辑了而已！~~</p>
+<h2 id="6-8-SetBool和SetTrigger函数比较，以及bool变量和trigger变量比较"><a href="#6-8-SetBool和SetTrigger函数比较，以及bool变量和trigger变量比较" class="headerlink" title="6.8 SetBool和SetTrigger函数比较，以及bool变量和trigger变量比较"></a>6.8 SetBool和SetTrigger函数比较，以及bool变量和trigger变量比较</h2><p>Unity4.3在animator面板内引入了Trigger这个变量（以前只有int ,float,bool三种）</p>
+<h3 id="6-8-1-SetBool-SetTrigger函数"><a href="#6-8-1-SetBool-SetTrigger函数" class="headerlink" title="6.8.1 SetBool,SetTrigger函数"></a>6.8.1 SetBool,SetTrigger函数</h3><p>在animator界面要是需要用一个bool变量（这里以bool IsAttack为例）来控制动画的来回切换就要先设置IsAttack为true，然后在适当的时候设置为false。<br>如何获取适当的时候呢？一般都是通过animator.GetCurrentAnimatorStateInfo来获取当前的动画播放信息。<br>SetBool比较简单，代码如下：  </p>
+<pre><code>stateInfo0 = animator.GetCurrentAnimatorStateInfo(0);
+if(stateInfo0.IsName(&quot;Base Layer.Attack&quot;))
+{
+    if(stateInfo0.normalizedTime&gt;0.9f)
+    {
+        animator.SetBool(&quot;IsAttack&quot;,false);
+    }
+}
+if(Input.GetKeyDown(KeyCode.A))
+{
+    animator.SetBool(&quot;IsAttack&quot;,true);
+}
+</code></pre><p>SetTrigger代码如下（这里用SetTrigger来操纵animator界面中声明为bool类型的变量，发现竟然可以操纵）：  </p>
+<pre><code>stateInfo0 = animator.GetCurrentAnimatorStateInfo(0);
+if(stateInfo0.IsName(&quot;Base Layer.Attack&quot;))
+{
+    if(stateInfo0.normalizedTime&gt;0.9f)
+    {
+        animator.SetBool(&quot;IsAttack&quot;,false);
+    }
+}
+if(Input.GetKeyDown(KeyCode.A))
+{
+    animator.SetTrigger(&quot;IsAttack&quot;);
+}
+</code></pre><p>SetTrigger实质其实就是设置了IsAttack为true了。但事实上SetTrigger函数是用来操纵Trigger类型变量的。如下介绍</p>
+<h3 id="6-8-2-Bool变量，Trigger变量"><a href="#6-8-2-Bool变量，Trigger变量" class="headerlink" title="6.8.2 Bool变量，Trigger变量"></a>6.8.2 Bool变量，Trigger变量</h3><p><a href="http://answers.unity3d.com/questions/600268/mecanim-animation-parameter-types-boolean-vs-trigg.html/" target="_blank" rel="external">http://answers.unity3d.com/questions/600268/mecanim-animation-parameter-types-boolean-vs-trigg.html/</a><br>这里有讨论。<br>下图为使用Trigger变量作为条件的截图，它不像Bool变量那样有true，false之分。<br><img src="/img/trigger inspector.png" alt="trigger inspector"><br>通过使用SetTrigger函数，可以先设置Tigger变量的值为true,使得进入另一个状态，然后立马Tigger变量又变为false。这样就不用像SetBool函数那边，还要考虑在合适的时候设置为false的问题。<br>比如人物从Idle状态到攻击状态，通过Tigger类型变量isAttack来控制。<br>从Idle到攻击，用isAttack来控制。这样我们进入攻击后，该变量又回到false。<br>攻击再回到Idle,用ExistTime来控制。这样就比较好的解决了问题。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/10/04/Unity3D mecanim杂记/" class="archive-article-date">
+  	<time datetime="2015-10-04T13:33:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-04</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/05/Unity3D优化相关总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Unity3D优化相关总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/03/Unity3D bug积累/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Unity3D bug积累</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

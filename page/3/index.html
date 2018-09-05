@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="测试description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iningwei的私家宅院">
+<meta property="og:url" content="https://iningwei.github.io/page/3/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="测试description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iningwei的私家宅院">
+<meta name="twitter:description" content="测试description">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        
+  
+    <article id="post-Unity3D和3DSMax的种种" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/03/Unity3D和3DSMax的种种/">Unity3D和3DSMax的种种</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-坐标系的统一"><a href="#1-坐标系的统一" class="headerlink" title="1:坐标系的统一"></a>1:坐标系的统一</h1><p>Unity3D使用左手坐标系，Max是右手坐标系。<br>Max中模型导出fbx后导入Unity中后，X轴的旋转会变成-90°。因此需要在导出前把Max中模型的Y轴旋转向上，即旋转X轴90°。<br>方法：3DSMax中切换顶视图，此时默认坐标轴为：X轴向右，Y轴向上，Z轴指向自己。需要改成:X轴向右，Y轴指向自己，Z轴向下。这样导出的fbx在Unity中便是正常的了。</p>
+<p>!(3DSMax模型导出fbx注意事项)[/img/3dsmax fbx 2 unity3d.png]<br>特别注意第2点，要修改为Local局部坐标。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/10/03/Unity3D和3DSMax的种种/" class="archive-article-date">
+  	<time datetime="2015-10-03T07:43:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3DSMax/">3DSMax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Unity3D插件之刀光" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/03/Unity3D插件之刀光/">Unity3D插件之刀光</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1：wiki上的开源脚本，原理：动态mesh  </p>
+<p>来源：<a href="http://wiki.unity3d.com/index.php?title=MeleeWeaponTrail" target="_blank" rel="external">http://wiki.unity3d.com/index.php?title=MeleeWeaponTrail</a></p>
+<p>该刀光脚本由三部分组成：<br>最根本的刀光动态mesh脚本MeleeWeaponTrail.cs；刀光显示与否的控制脚本；以及刀光平滑插值脚本Interpolate.cs(<a href="http://wiki.unity3d.com/index.php/Interpolate)。其中插值脚本不是必须的。" target="_blank" rel="external">http://wiki.unity3d.com/index.php/Interpolate)。其中插值脚本不是必须的。</a><br>使用方法：把MeleeWeaponTrail.cs脚本附加到3D模型武器所在的骨骼点上，同时为该骨骼点增加两个空的子物体，一个用来指示刀光的顶部位置，一个用来指示刀光的底部位置。脚本中取消“#define USE_INTERPOLATION”的注释，可以平滑刀光，但是记得到要在工程中添加Interpolate.cs脚本。<br>把脚本MeleeWeaponTrail.cs拖到骨骼点上，Inspector界面为  </p>
+<p><img src="/img/melee weapon trail.png" alt="&quot;刀光插件inspector视图&quot;">  </p>
+<p>Emit表示是否发出刀光，若是想通过代码控制，一般都取消Emit的勾选  </p>
+<p>EmitTime表示刀光发出后多久就停止发出刀光，0表示无限大，一般默认该值  </p>
+<p>Material为刀光使用的材质球。。。。注意材质球使用Particles/Additive的shader  </p>
+<p>LifeTime表示刀光面片存在的时间，单位s  </p>
+<p>Colors：淡出颜色，（通过设置Colors的alpha可以很好控制刀光的透明度，一般设置alpha为50效果还不错，另外通过设置Colors可以设置刀光的颜色，而不必再做一个带颜色的刀光了）  </p>
+<p>Sizes:设置刀光不同部位的大小  </p>
+<p>Min Vertex Distance: Never make segments shorter than this  </p>
+<p>Max Vertex Distance: Never make segments longer than this  </p>
+<p>Max Angle: Never make angles between segments greater than this. Increasing it will make a faster but uglier line.  </p>
+<p>Auto Destruct: Destroy this object and the render object if we are not emitting and have no segments left .  </p>
+<p>Base,Tip就是上面提到的刀光的底部和顶端位置  </p>
+<p>然后我们在刀光的控制脚本通过设置MeleeWeaponTrail.cs的Emit参数true/false来控制刀的开关。如下代码：  </p>
+<pre><code>public class MeleeWeaponTrailControl : MonoBehaviour
+{
+    [SerializeField]
+    MeleeWeaponTrail _trail;
+    Animator animator;
+    AnimatorStateInfo stateInfo0;
+    void Start()
+    {
+        animator = GetComponent&lt;Animator&gt;();
+        _trail.Emit = false;
+    }
+    void Update()
+    {
+        stateInfo0 = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo0.IsName(&quot;Base Layer.Melee1&quot;)
+            || stateInfo0.IsName(&quot;Base Layer.Melee2&quot;)
+            || stateInfo0.IsName(&quot;Base Layer.Melee3&quot;)
+            || stateInfo0.IsName(&quot;Base Layer.Melee4&quot;)
+            || stateInfo0.IsName(&quot;Base Layer.Melee5&quot;))
+        {
+            if (stateInfo0.normalizedTime &gt; 0.1 &amp;&amp; stateInfo0.normalizedTime &lt; 0.8)
+            {
+                _trail.Emit = true;
+            }
+            else
+            {
+                _trail.Emit = false;
+            }
+        }
+    }
+}    
+</code></pre><p>以上涉及到的脚本已经存到百度网盘：<a href="http://pan.baidu.com/s/1pJWqSP1" target="_blank" rel="external">http://pan.baidu.com/s/1pJWqSP1</a></p>
+<p><a href="https://www.assetstore.unity3d.com/en/#!/content/1728" target="_blank" rel="external">https://www.assetstore.unity3d.com/en/#!/content/1728</a>这是Unity3D assetstore上的基于上述的工程。<a href="http://pan.baidu.com/s/1gel03AV" target="_blank" rel="external">http://pan.baidu.com/s/1gel03AV</a>这是该工程的网盘链接</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/10/03/Unity3D插件之刀光/" class="archive-article-date">
+  	<time datetime="2015-10-03T06:47:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Unity3D音频视频相关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/01/Unity3D音频视频相关/">Unity3D音频视频相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>音频视频<br>unity3d支持的音频文件格式：.aif, .wav, .mp3, 和 .ogg</p>
+<p>视频格式：支持.mov, .mpg, .mpeg, .mp4, .avi, .asf,.ogg,.ogv格式</p>
+<p>Ogg格式转换<br>1 在线工具：<br><a href="http://www.online-convert.com/" target="_blank" rel="external">http://www.online-convert.com/</a><br>2 TheoraConverter：<br>老软件了，好几年没有更新了。<br><a href="http://sourceforge.net/projects/theoraconverter/" target="_blank" rel="external">http://sourceforge.net/projects/theoraconverter/</a> 可以下载到1.1版本的，貌似没有格式选择，测试了一下转换后为ogv格式的。<br><a href="http://theora-converter-net.software.informer.com/download/" target="_blank" rel="external">http://theora-converter-net.software.informer.com/download/</a> 这里提供的有2.6版本的，但是下载不下<br>2.6版本的多了格式选择，其它的没有详细比较。。。</p>
+<p>我的网盘提供了1.1，2.6两个版本的 <a href="http://pan.baidu.com/s/1pJDHSuv" target="_blank" rel="external">http://pan.baidu.com/s/1pJDHSuv</a><br><img src="/img/Theora Converter.png" alt="Theora Converter"><br>如图为2.6的截图，第二个选项卡“Video”里面EncodingMode默认就是Bitrate 1000<br>若用默认值，转出来的视频马赛克严重，故该值越大越好，范围为后面小括号内的值。<br>另外也可以选择Quality，默认值是6，测试结果还可以。这个值越大越清晰，当然视频的大小也会大一些。。。<br>3： iDealshare VideoGo<br>这个没有测试，！！！蛋疼<br><a href="http://www.idealshare.net/video-converter/ogv-converter-for-mac-windows.html" target="_blank" rel="external">http://www.idealshare.net/video-converter/ogv-converter-for-mac-windows.html</a></p>
+<p>4:vcl视频播放软件和miro Video Conterter软件<br><a href="http://www.videolan.org/" target="_blank" rel="external">http://www.videolan.org/</a><br><a href="http://www.mirovideoconverter.com/" target="_blank" rel="external">http://www.mirovideoconverter.com/</a><br>经过测试vcl和miro converter转换后的ogg（ogv）分辨率不行而且丢帧严重</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/10/01/Unity3D音频视频相关/" class="archive-article-date">
+  	<time datetime="2015-09-30T17:10:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-01</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Unity3D中的小知识点杂记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/01/Unity3D中的小知识点杂记/">Unity3D中的小知识点杂记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-方法"><a href="#1-方法" class="headerlink" title="1:方法"></a>1:方法</h1><h2 id="1-1-Quaternion-Euler"><a href="#1-1-Quaternion-Euler" class="headerlink" title="1.1 Quaternion.Euler"></a>1.1 Quaternion.Euler</h2><p>欧拉角旋转，按照Z,X,Y的顺序旋转</p>
+<h2 id="1-2-Quaternion-Angle"><a href="#1-2-Quaternion-Angle" class="headerlink" title="1.2 Quaternion.Angle"></a>1.2 Quaternion.Angle</h2><p>static float Angle(Quaternion a, Quaternion b);<br>获得两个四元数之间的夹角，结果是两个z轴之间的夹角</p>
+<h2 id="1-3-Quaternion-AngleAxis"><a href="#1-3-Quaternion-AngleAxis" class="headerlink" title="1.3 Quaternion.AngleAxis"></a>1.3 Quaternion.AngleAxis</h2><p>static Quaternion AngleAxis(float angle, Vector3 axis);<br>经过测试，为某个物体设置围绕具体axis旋转的角度后，其余轴的旋转值会被设置为0.即使物体原始状态下其余轴的旋转值不为0.<br>angle可以设置为任意值，为负值时，表现在inspector面板上的物体旋转角度会被换算为正值(如-5会被换算为355)。若angle超过+-360°，也会被换算为[0,360）</p>
+<h2 id="1-4-Object-FindObjectsOfType"><a href="#1-4-Object-FindObjectsOfType" class="headerlink" title="1.4 Object.FindObjectsOfType"></a>1.4 Object.FindObjectsOfType</h2><p>static Object[] FindObjectsOfType(Type type);<br>Returns a list of all active loaded objects of Type type.<br>//这个函数是递归的，可以获得子物体。获得的是整个场景中某种类型的物体,若物体上有某个脚本（如abc.cs）,通过GameObject.FindObjectsOfType(typeof(abc)) 也可以获得到改物体</p>
+<h2 id="1-5-获得当前场景名称"><a href="#1-5-获得当前场景名称" class="headerlink" title="1.5 获得当前场景名称"></a>1.5 获得当前场景名称</h2><p><strong>编辑器模式下：</strong>Path.GetFileName(EditorApplication.currentScene)<br>EditorApplication.currentScene获得的是诸如Assets/XXX/XXX.unity这种路径。使用Path.GetFileName获得名称和后缀.unity<br><strong>运行模式下：</strong>Application.loadedLevelName获得的只是场景名称，无后缀</p>
+<h2 id="1-6-获得机器唯一标识符"><a href="#1-6-获得机器唯一标识符" class="headerlink" title="1.6 获得机器唯一标识符"></a>1.6 获得机器唯一标识符</h2><p>SystemInfo.deviceUniqueIdentifier<br>这个对于ios设备，ios7之前获取的才是唯一的，具体参见文档。<br>SystemInfo可以获得很多关于设备的参数信息。</p>
+<h1 id="3：清空console面板的输出"><a href="#3：清空console面板的输出" class="headerlink" title="3：清空console面板的输出"></a>3：清空console面板的输出</h1><p>以下代码对4.3.4有效<br>        public static void ClearLog()<br>    {<br>        var assembly = Assembly.GetAssembly(typeof(UnityEditor.ActiveEditorTracker));//注意Assembly需要使用using System.Reflection<br>        var type = assembly.GetType(“UnityEditorInternal.LogEntries”);<br>        var method = type.GetMethod(“Clear”);<br>        method.Invoke(new object(), null);<br>}<br>适用于运行时、适用于Editor<br><a href="http://answers.unity3d.com/questions/10580/editor-script-how-to-clear-the-console-output-wind.html" target="_blank" rel="external">http://answers.unity3d.com/questions/10580/editor-script-how-to-clear-the-console-output-wind.html</a></p>
+<h1 id="平台依赖编译"><a href="#平台依赖编译" class="headerlink" title="平台依赖编译"></a>平台依赖编译</h1><p><a href="https://docs.unity3d.com/Documentation/Manual/PlatformDependentCompilation.html" target="_blank" rel="external">https://docs.unity3d.com/Documentation/Manual/PlatformDependentCompilation.html</a><br>结合#if #elif #else #endif及||使用<br>运行时平台<br>RuntimePlatform<br> if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)</p>
+<h1 id="Rich-Text"><a href="#Rich-Text" class="headerlink" title="Rich Text"></a>Rich Text</h1><p>Unity Manual-&gt;Advanced 支持对GUI中的字体和Debug中的字符，支持的tag有<br><b></b><br><i></i></p>
+<p><size=30></size=30></p>
+<color=#00ffffff>或<color=red>
+
+
+
+<h1 id="通过代码执行菜单项"><a href="#通过代码执行菜单项" class="headerlink" title="通过代码执行菜单项"></a>通过代码执行菜单项</h1><p>EditorApplication.ExecuteMenuItem(“GameObject/Create Other/Cube”)</p>
+<h1 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h1><p>程序中Color范围为[0,1]</p>
+<h1 id="碰撞设置："><a href="#碰撞设置：" class="headerlink" title="碰撞设置："></a>碰撞设置：</h1><p>1，通过Edit-&gt;ProjectSettings-&gt;Physics<br>来设置全局的碰撞矩阵。<br>代码中也可以使用Physics.IgnoreLayerCollision来设置具体两个layer之间的碰撞关系。<br>static void IgnoreLayerCollision(int layer1, int layer2, bool ignore = true);<br>如：<br>Physics.IgnoreLayerCollision(9, 12, true);<br>这里的int型的layer1,layer2对应的就是Layer的Index，不需要进行位运算</p>
+<p>忽略两个collider之间的碰撞，可以使用方法Physics.IgnoreCollision()</p>
+<h1 id="Editor模式下，运行，Update堵塞"><a href="#Editor模式下，运行，Update堵塞" class="headerlink" title="Editor模式下，运行，Update堵塞"></a>Editor模式下，运行，Update堵塞</h1><pre><code>void Update()
+{
+    Debug.Log(Time.time);
+}
+</code></pre><p>打印结果：<br><img src="/img/update log.png" alt="&quot;Update打印结果&quot;"></p>
+<p>这也是为什么在编辑器模式下写诸如transform.translate之类的移动函数的时候，一开始会出现跳跃的原因了。</p>
+<p>解决方法，默认obj为不可见，程序中通过设置obj的Active为true，可以解决。<br>另外可以使用FixedUpdate</p>
+<h1 id="Awake执行还是不执行？"><a href="#Awake执行还是不执行？" class="headerlink" title="Awake执行还是不执行？"></a>Awake执行还是不执行？</h1><p>脚本附着到gameobject上。<br>当脚本的enable为false，gameobject active为true,运行游戏后，脚本的awake函数依旧执行。<br>当脚本的enable为true，gameobject active为false,运行游戏后，脚本的awake函数不执行。</p>
+</color=red></color=#00ffffff>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/10/01/Unity3D中的小知识点杂记/" class="archive-article-date">
+  	<time datetime="2015-09-30T16:58:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-01</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Unity3D中的属性标识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/30/Unity3D中的属性标识/">Unity3D中的属性标识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-类级别标识"><a href="#1-类级别标识" class="headerlink" title="1. 类级别标识"></a>1. 类级别标识</h1><h2 id="1-1-AddComponentMenu-添加组件菜单"><a href="#1-1-AddComponentMenu-添加组件菜单" class="headerlink" title="1.1 AddComponentMenu 添加组件菜单"></a>1.1 AddComponentMenu 添加组件菜单</h2><p>默认的脚本都会出现在”Component-&gt;Script”菜单下，在类之前通过AddComponentMenu标识可以设定脚本出现在Component下的其它目录。注意该标识生效需要重启Unity3D。<br>eg:  </p>
+<pre><code>[AddComponentMenu(&quot;MyTest/Test&quot;)]
+public class Test : MonoBehaviour
+{
+} 
+</code></pre><h2 id="1-2-ExecuteInEditMode-Editor模式下运行"><a href="#1-2-ExecuteInEditMode-Editor模式下运行" class="headerlink" title="1.2 ExecuteInEditMode Editor模式下运行"></a>1.2 ExecuteInEditMode Editor模式下运行</h2><p>Editor模式下运行三种函数调用的方式如下：<br>Update() 当Scene视图有改变的时候被调用<br>OnGUI() 当Game视图收到一个事件的时候被调用<br>OnRenderObject() Scene或者Game视图重绘时被调用  </p>
+<h2 id="1-3-RequireComponent-脚本的运行依赖某组件的存在"><a href="#1-3-RequireComponent-脚本的运行依赖某组件的存在" class="headerlink" title="1.3 RequireComponent 脚本的运行依赖某组件的存在"></a>1.3 RequireComponent 脚本的运行依赖某组件的存在</h2><h2 id="1-4-Serializable-可序列化"><a href="#1-4-Serializable-可序列化" class="headerlink" title="1.4 Serializable 可序列化"></a>1.4 Serializable 可序列化</h2><p>该标识可以使得类（结构）级别的变量显示在检视面板，也能序列化它。<br>（注意对于JS，不需要该标识，默认类级别的变量是可以序列化的）<br>（注意要引用命名空间System）</p>
+<h2 id="1-5-CustomEditor-自定义某个组件的检视面板样式"><a href="#1-5-CustomEditor-自定义某个组件的检视面板样式" class="headerlink" title="1.5 CustomEditor 自定义某个组件的检视面板样式"></a>1.5 CustomEditor 自定义某个组件的检视面板样式</h2><p>格式：[CustomEditor(typeof(XXXX))]，详见“Unity3D编辑器扩展”一文。</p>
+<h1 id="2-方法级标识"><a href="#2-方法级标识" class="headerlink" title="2. 方法级标识"></a>2. 方法级标识</h1><h2 id="2-1-ContextMenu-上下文菜单"><a href="#2-1-ContextMenu-上下文菜单" class="headerlink" title="2.1 ContextMenu 上下文菜单"></a>2.1 ContextMenu 上下文菜单</h2><p>这是一个<strong>方法级</strong>的标识，可以为Inspector脚本中添加一个触发事件，示例代码和截图如下所示。 注意ContextMenu不支持多重路径。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[AddComponentMenu(<span class="string">"MyTest/Test"</span>)]</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> : <span class="title">MonoBehaviour</span></div><div class="line">&#123;</div><div class="line">    [ContextMenu(<span class="string">"DoLogTest"</span>)]</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DoLogTest</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Debug.Log(<span class="string">"i am function DoLogTest"</span>);</div><div class="line">    &#125;</div><div class="line">    [ContextMenu(<span class="string">"ShowName"</span>)]</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">ShowName</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Debug.Log(gameObject.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/img/ContextMenu.png" alt="上下文菜单使用示例"></p>
+<h2 id="2-2-MenuItem-编辑器扩展添加菜单的目录"><a href="#2-2-MenuItem-编辑器扩展添加菜单的目录" class="headerlink" title="2.2 MenuItem 编辑器扩展添加菜单的目录"></a>2.2 MenuItem 编辑器扩展添加菜单的目录</h2><p>详见“Unity3D编辑器扩展”一文，需要引用Unity.Editor命名空间，类需要放到Editor目录下。</p>
+<h1 id="3-变量级标识"><a href="#3-变量级标识" class="headerlink" title="3. 变量级标识"></a>3. 变量级标识</h1><h2 id="3-1-HideInInspector-Inspector界面隐藏变量的显示"><a href="#3-1-HideInInspector-Inspector界面隐藏变量的显示" class="headerlink" title="3.1 HideInInspector Inspector界面隐藏变量的显示"></a>3.1 HideInInspector Inspector界面隐藏变量的显示</h2><p>注意变量仍可以被序列化，只是不在Inspector界面显示而已。</p>
+<h2 id="3-2-NonSerialized-不被序列化"><a href="#3-2-NonSerialized-不被序列化" class="headerlink" title="3.2 NonSerialized 不被序列化"></a>3.2 NonSerialized 不被序列化</h2><p>不序列化变量，且不显示在检视面板中。（注意要引用命名空间System）</p>
+<h2 id="3-3-SerializeField-私有变量序列化"><a href="#3-3-SerializeField-私有变量序列化" class="headerlink" title="3.3 SerializeField 私有变量序列化"></a>3.3 SerializeField 私有变量序列化</h2><p>该标识可以将私有变量（所有继承自UnityEngine.Object的类，如GameObject,Component,MonoBehaviour,Texture2D,AnimationClip;所有基本类型，如int,string,float,bool;一些内建类型，如Vector2,Vector3,Quaternion,Color,Rect,Layermask;序列化类型的Array,序列化类型的List;枚举Enum）序列化，使得在检视面板内可以重新设置变量的值，虽然检视面板可见，但仍然是私有变量。<br>注意该标识不可以序列化静态变量，也不能序列化属性。</p>
+<h2 id="3-4-ContextMenuItem"><a href="#3-4-ContextMenuItem" class="headerlink" title="3.4 ContextMenuItem"></a>3.4 ContextMenuItem</h2><p>可以为变量(public)添加右键弹出命令，从而执行相关的操作。<br>该标识接受两个变量，1个是display name，一个是右键弹出菜单点击后的方法。<br>如下述代码和截图所示：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> : <span class="title">MonoBehaviour</span></div><div class="line">&#123;</div><div class="line">    [ContextMenuItem(<span class="string">"Random Age"</span>, <span class="string">"RandomAge"</span>)]</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> Age;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">RandomAge</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Age = <span class="keyword">new</span> System.Random(DateTime.Now.Millisecond).Next(<span class="number">1</span>, <span class="number">100</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [ContextMenuItem(<span class="string">"Random Name"</span>, <span class="string">"RandomName"</span>)]</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">RandomName</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">string</span>[] names = <span class="keyword">new</span> <span class="keyword">string</span>[] &#123; <span class="string">"Jack"</span>, <span class="string">"Jim"</span>, <span class="string">"Tomas"</span>, <span class="string">"Han"</span>, <span class="string">"Ann"</span> &#125;;</div><div class="line">        Name = names[<span class="keyword">new</span> System.Random(DateTime.Now.Millisecond).Next(<span class="number">0</span>, <span class="number">4</span>)];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/img/ContextMenuItem.png" alt="ContextMenuItem标识实现的效果">  </p>
+<h2 id="3-5-Range-RangeAttribute-变量范围限定"><a href="#3-5-Range-RangeAttribute-变量范围限定" class="headerlink" title="3.5 Range/RangeAttribute 变量范围限定"></a>3.5 Range/RangeAttribute 变量范围限定</h2><p><code>[Range(min,max)]</code>或者<code>[RangeAttribute(min,max)]</code>可以对变量的输入范围进行限定，使得Inspector检视面板内的数值输入框变成Slider,且范围为(min,max)。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/30/Unity3D中的属性标识/" class="archive-article-date">
+  	<time datetime="2015-09-29T18:05:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-30</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-解决Unity3D离线文档打开缓慢的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/30/解决Unity3D离线文档打开缓慢的问题/">解决Unity3D离线文档打开缓慢的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不知道从哪个版本开始离线文档（主要是../Editor/Data/Documentation/html/en这个目录下的Manual和ScriptReference两个文件夹下的html页面）的打开很是缓慢。经查，在html页面内有google字样,如下图，因此可以判断被墙了。<br><img src="/img/unity manual google Q.png" alt="Unity3D 离线文档被墙证据">   </p>
+<p>于是写个程序把两个目录下html文件中的这句字符串<strong><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css"></strong>都用“ ”代替了。顺利解决问题。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/30/解决Unity3D离线文档打开缓慢的问题/" class="archive-article-date">
+  	<time datetime="2015-09-29T17:58:07.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-30</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-解决Unity3D打包android连接不上adb的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/28/解决Unity3D打包android连接不上adb的问题/">解决Unity3D打包android连接不上adb的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1：前言"><a href="#1：前言" class="headerlink" title="1：前言"></a>1：前言</h1><p>打包android，报错(Unable to kill the adb server.Please make sure the Android SDK is installed and is properly configured in the Editor……),具体如下图所示：<br><img src="/img/publish android error.png" alt="Unity3D打包android报错详情">  </p>
+<h1 id="2-必备知识和解决方案"><a href="#2-必备知识和解决方案" class="headerlink" title="2:必备知识和解决方案"></a>2:必备知识和解决方案</h1><h2 id="2-1-5037端口"><a href="#2-1-5037端口" class="headerlink" title="2.1 5037端口"></a>2.1 5037端口</h2><p>adb的默认端口是5037</p>
+<h2 id="2-2-如何查看指定端口被哪个进程占用"><a href="#2-2-如何查看指定端口被哪个进程占用" class="headerlink" title="2.2 如何查看指定端口被哪个进程占用"></a>2.2 如何查看指定端口被哪个进程占用</h2><h3 id="2-2-1-查看当前进程所有占用端口"><a href="#2-2-1-查看当前进程所有占用端口" class="headerlink" title="2.2.1 查看当前进程所有占用端口"></a>2.2.1 查看当前进程所有占用端口</h3><p>命令:netstat -ano<br><img src="/img/all port.png" alt="查看进程占用的所有端口"><br>如上图最后一列PID，即Process ID(进程标识ID)。  </p>
+<h3 id="2-2-2-查看具体某个端口号是否被占用"><a href="#2-2-2-查看具体某个端口号是否被占用" class="headerlink" title="2.2.2 查看具体某个端口号是否被占用"></a>2.2.2 查看具体某个端口号是否被占用</h3><p>命令:netstat -ano|findstr “XXXX”<br><img src="/img/serch port 5037.png" alt="查看具体某个端口是否被占用"><br>如上图22056即为占用5037端口的进程的PID。  </p>
+<h3 id="2-2-3-根据PID找到进程"><a href="#2-2-3-根据PID找到进程" class="headerlink" title="2.2.3 根据PID找到进程"></a>2.2.3 根据PID找到进程</h3><p>有了PID，可以在任务管理器找到对应的进程，如下图：<br><img src="/img/task manager PID.png" alt="任务管理器查找PID对应的进程">  </p>
+<p>也可以使用命令:tasklist|findstr “XXXX”,如下图：<br><img src="/img/tasklist find process.png" alt="通过cmd命令查找PID对应的进程"><br>（注意，命令tasklist可以获得当前所有的进程）</p>
+<h3 id="2-2-4-关闭进程"><a href="#2-2-4-关闭进程" class="headerlink" title="2.2.4 关闭进程"></a>2.2.4 关闭进程</h3><p>命令：taskkill/pid XXXX<br>有时候需要/f 强制关闭。即：taskkill/pid xxxx/f,如下图。<br><img src="/img/taskkill force.png" alt="使用命令关闭指定PID的进程">  </p>
+<h1 id="3-特殊情况"><a href="#3-特殊情况" class="headerlink" title="3:特殊情况"></a>3:特殊情况</h1><p>有时候占用adb的进程怎么都关闭不了，比如金山手机助手的进程sjk_daemon.exe,该进程会占用5037端口，且关闭后不一会儿又重启，很是恼火。无奈只有卸载金山毒霸（金山助手是集成在毒霸内的，日它仙人了~）</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/28/解决Unity3D打包android连接不上adb的问题/" class="archive-article-date">
+  	<time datetime="2015-09-28T10:55:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-28</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-安卓adb命令及结合Unity3D的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/23/安卓adb命令及结合Unity3D的使用/">安卓adb命令及结合Unity3D的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>adb全称为Android Debug Bridge,起调试桥的作用。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>1：将Android SDK中的platform-tools路径加到系统环境变量中<br>2：也可以不安装，每次都全目录来执行cmd命令</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>adb help 查看adb相关信息，包括版本号，常用命令等等<br>adb version 查看adb版本<br>adb install abc.apk 安装apk，一般虚拟机安装的时候使用该命令<br>adb devices 列出当前连接到主机的设备，可以用该命令查看手机是否和电脑通过usb连接了，比如用于Unity Remote联调判断连接情况<br>adb logcat 捕获设备的日志信息<br>adb logcat -s Unity 专门获得Unity相关的日志（注意U要大写）<br>adb shell 获取设备的shell环境<br>adb shell dumpsys meminfo com.test 查看正在运行的的安卓设备的程序的内存占用情况</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/23/安卓adb命令及结合Unity3D的使用/" class="archive-article-date">
+  	<time datetime="2015-09-22T16:21:19.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-23</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-使用Remote连调Unity3D和移动端" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/22/使用Remote连调Unity3D和移动端/">使用Remote连调Unity3D和移动端</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移动端测试的时候，打包、安装等一系列工作很耗时，导致效率低下，而且移动端打包测试的log信息也不好读取。<br>使用Remote可以在手机上操作、测试软件，特别是可以用来测试Touch、Accelerometer、Gyroscope、Device camera streams、Compass、GPS等，而且可以在客户端PC上查看相关log信息。</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><h2 id="1：移动设备安装相应的软件"><a href="#1：移动设备安装相应的软件" class="headerlink" title="1：移动设备安装相应的软件"></a>1：移动设备安装相应的软件</h2><p>对安卓,官方推荐googlePlay下载Remote。<br>对iOS,官方推荐asset store下载Remote软件。<br>本文以安卓为例说明，可以通过91助手搜索Remote，下载安装（尼玛最新版本都才13年的）<br>(补充：20150928，可以unity store上搜索Remote，使用Unity封装好的插件，发布到对应的移动平台，这个也是替代原来的Remote软件的。<br><img src="/img/Unity Remote 4.jpg" alt="Unity Remote4"><br>)</p>
+<h2 id="2：PC端"><a href="#2：PC端" class="headerlink" title="2：PC端"></a>2：PC端</h2><p><strong>2.1：转换到对应的平台</strong><br><strong>2.2：设置Remote的对应平台</strong><br>Edit-&gt;Project Settings-&gt;Editor<br>打开后如下,第一个图为4.5.2f1的界面，第二个为5.1.1f1的界面，选择对应的设备。<br><img src="/img/SetRemoteDevice.png" alt="设置Remote联调的设备 4.5.2f1">  </p>
+<p><img src="/img/SetRemoteDevice2.png" alt="设置Remote联调的设备 5.1.1f1"> </p>
+<p>上述搞定后，<strong>把移动设备和电脑用USB连接</strong>，先启动移动端的Remote软件，然后ctrl+p运行UnityEditor的程序。</p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p><strong>1：Remote无响应</strong><br>运行UnityEditor程序后，Remote软件没有显示Game界面的视图。<br>解决方法：<br>分别关闭Remote和UnityEditor程序，重新来，<strong>注意一定是两个都重启，且重启后先开Remote，再开Unity。</strong><br>PC上关闭*adb进程<br>关闭GPRS、WIFI（备注，个人测试在打开WIFI情况下可以连接，由于测试机无卡，因此没有测试GPRS的影响）  </p>
+<p><strong>2：糟糕的画质</strong><br>使用Remote后，事实上游戏是运行在Unity editor上的，只是画面内容会通过流的形式传到设备上，由于带宽的限制，因此对数据流会大量压缩，造成画质效果差。<br>如上述图所示，在5.0+Remote可以选择压缩(compression)方式为png，这样便可以无损传输图像，但会占用比JPEG更多的带宽。<br>Resolution默认为normal,可以选择Downsize,这样可以使得图像需要低一点的带宽，从而在图像的清晰和帧率之间达到一个平衡。<br><strong>3：部分API不支持</strong><br>如在移动设备或者客户端上Input.GetAxis(“Mouse X/Y”)都是可以获得值的，但是在Remote上始终为0（4.6.3的结果），可以用Input.GetTouch(0).deltaPosition代替，该API在移动设备和Remote上都有效~</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p>官方介绍Unity Remote4:<a href="http://docs.unity3d.com/Manual/UnityRemote4.html/" target="_blank" rel="external">http://docs.unity3d.com/Manual/UnityRemote4.html/</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/22/使用Remote连调Unity3D和移动端/" class="archive-article-date">
+  	<time datetime="2015-09-22T15:30:28.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-22</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Firebug无法安装的解决方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/21/Firebug无法安装的解决方法/">Firebug无法安装的解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Firebug插件安装，一直显示如下图所示，然后便提示安装不成功。<br><img src="/img/firebug install fail.png" alt="firebug install"><br>试了使用代理，使用不同版本的firefox，以及不同版本的firebug，都无法解决。<br>最后找到一个解决方法，即在hosts文件下添加如下两行：<br>117.18.232.191 mozorg.cdn.mozilla.net<br>117.18.232.191 addons.cdn.mozilla.net</p>
+<p>补充：hosts文件修改方法:<a href="http://jingyan.baidu.com/article/47a29f2410f331c01423999e.html/" target="_blank" rel="external">http://jingyan.baidu.com/article/47a29f2410f331c01423999e.html/</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/09/21/Firebug无法安装的解决方法/" class="archive-article-date">
+  	<time datetime="2015-09-20T16:11:05.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-21</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件安装/">软件安装</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    </nav>
+  
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

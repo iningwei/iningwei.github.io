@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>浅谈C#中多态的魅力（虚方法、抽象、接口实现） | iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="浅谈C#中多态的魅力（虚方法、抽象、接口实现）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈C#中多态的魅力（虚方法、抽象、接口实现）">
+<meta property="og:url" content="https://iningwei.github.io/2017/01/04/浅谈C#中多态的魅力（虚方法、抽象、接口实现）/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="浅谈C#中多态的魅力（虚方法、抽象、接口实现）">
+<meta property="og:image" content="https://iningwei.github.io/img/duotai_virtual.png">
+<meta property="og:updated_time" content="2017-01-04T15:42:18.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈C#中多态的魅力（虚方法、抽象、接口实现）">
+<meta name="twitter:description" content="浅谈C#中多态的魅力（虚方法、抽象、接口实现）">
+<meta name="twitter:image" content="https://iningwei.github.io/img/duotai_virtual.png">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-浅谈C#中多态的魅力（虚方法、抽象、接口实现）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浅谈C#中多态的魅力（虚方法、抽象、接口实现）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="转载请尊重原作者iningwei成果，保留出处。https-iningwei-github-io"><a href="#转载请尊重原作者iningwei成果，保留出处。https-iningwei-github-io" class="headerlink" title="转载请尊重原作者iningwei成果，保留出处。https://iningwei.github.io"></a>转载请尊重原作者iningwei成果，保留出处。<a href="https://iningwei.github.io">https://iningwei.github.io</a></h2><p>C#中多态的实现方式一般有3种，即分别通过虚方法、抽象类、接口来实现。</p>
+<p>理解多态首先要对里氏替换原则和开放封闭原则有所了解。</p>
+<ul>
+<li>里氏替换原则（Liskov Substitution Principle）:派生类（子类）对象能够替换其基类（超类）对象被使用。通俗一点的理解就是“子类是父类”，举个例子，“男人是人，人不一定是男人”，当需要一个父类类型的对象的时候可以给其赋予一个子类类型的对象；当需要一个子类类型对象的时候给一个父类类型对象是不可以的！</li>
+<li>开放封闭原则（Open Closed Principle）：封装变化、降低耦合，软件实体应该是可扩展，而不可修改的。也就是说，对扩展是开放的，而对修改是封闭的。因此，开放封闭原则主要体现在两个方面：对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对类进行任何修改。</li>
+</ul>
+<h1 id="一，虚方法实现多态"><a href="#一，虚方法实现多态" class="headerlink" title="一，虚方法实现多态"></a>一，虚方法实现多态</h1><p>喜鹊（Magpie）、老鹰（Eagle）、企鹅（Penguin）都是属于鸟类，它们拥有共性吃。因此可以提取鸟类（Bird）做为父类，Eat()作为父类的虚方法。喜鹊、老鹰、企鹅分别继承Bird类，并重写父类中的Eat类，达到不同的鸟类吃的东西不一样的功能。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Bird</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Eat</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Console.WriteLine(<span class="string">"i am a bird,i must eat"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Magpie</span> : <span class="title">Bird</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Eat</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Console.WriteLine(<span class="string">"我吃虫子"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Eagle</span> : <span class="title">Bird</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Eat</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Console.WriteLine(<span class="string">"我吃肉"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Penguin</span> : <span class="title">Bird</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Eat</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        Console.WriteLine(<span class="string">"我吃鱼"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> <span class="title">Program</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></div><div class="line">    &#123;</div><div class="line">        Bird[] birds =  &#123;</div><div class="line">           <span class="keyword">new</span> Bird(), <span class="keyword">new</span> Magpie(),<span class="keyword">new</span> Eagle(),<span class="keyword">new</span> Penguin()</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> birds)</div><div class="line">        &#123;</div><div class="line">            item.Eat();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以上代码运行结果：<br><img src="/img/duotai_virtual.png" alt="&quot;虚方法多态运行结果&quot;">  </p>
+<p>由此可见，子类Magpie，Eagle，Penguin对象可以赋值给父类对象，也就是说父类类型指针可以指向子类类型对象，这里体现了里氏替换原则。<br>父类对象调用自己的Eat()方法，实际上显示的是父类类型指针指向的子类类型对象重写父类Eat后的方法。这就是多态。<br>其实多态的作用就是把不同的子类对象都当作父类来看，可以屏蔽不同子类对象之间的差异，写出通用的代码，做出通用的编程，以适应需求的不断变化。<br>以上程序也体现了开放封闭原则，如果后面的同事需要扩展我这个程序，还想再添加一个猫头鹰（Owl），很容易，只需要添加一个Owl类文件，继承Bird，重写Eat()方法，添加给父类对象就可以了。至此，该程序的扩展性得到了提升，而又不需要查看源代码是如何实现的就可以扩展新功能。这就是多态带来的好处。</p>
+<h1 id="二，抽象类实现多态"><a href="#二，抽象类实现多态" class="headerlink" title="二，抽象类实现多态"></a>二，抽象类实现多态</h1><p>如果我们用不到Bird父类的对象，那么可以使用抽象类来优化。把Bird改成抽象类，Eat()方法改成抽象方法。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Bird</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">Eat</span>(<span class="params"></span>)</span>;<span class="comment">//抽象方法，没有方法体。</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>喜鹊、老鹰、企鹅的代码不需要任何更改，main方法体内birds数组不再实例化抽象的Bird类。</p>
+<p>至于何时使用虚方法，何时使用抽象类，需要根据具体需求，即是否需要使用基类的实例。</p>
+<h1 id="三，接口实现多态"><a href="#三，接口实现多态" class="headerlink" title="三，接口实现多态"></a>三，接口实现多态</h1><p>喜鹊和老鹰能够飞翔、企鹅无法飞翔。一般而言，可以在父类Bird中定义Fly()方法。但是企鹅也继承了Bird的Fly()方法，这有点不伦不类。另外当我们还要添加一个飞机类（Plane），飞机类也具有Fly()的能力。若继承Bird做父类，则不合适。若不继承的话，飞机里面又定义一个Fly()方法，造成代码紊乱。<br>这个时候接口的作用就体现出来了，我们可以定义一个IFlyable接口，接口内定义Fly()方法。这样，对于喜鹊、老鹰和飞机，可以选择实现IFlyable接口，来实现飞行的功能。企鹅由于不能飞翔，因此可以不实现IFlyable接口。 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">public interface IFlyable</div><div class="line">&#123;</div><div class="line">    void Fly();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public abstract class Bird</div><div class="line">&#123;</div><div class="line">    public abstract void Eat();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class Magpie : Bird, IFlyable</div><div class="line">&#123;</div><div class="line">    public override void Eat()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine("我吃虫子");</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void Fly()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine("我是喜鹊，我起飞啦");</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class Eagle : Bird, IFlyable</div><div class="line">&#123;</div><div class="line">    public override void Eat()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine("我吃肉");</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void Fly()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine("我是老鹰，我起飞啦");</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public class Penguin : Bird</div><div class="line">&#123;</div><div class="line">    public override void Eat()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine("我吃鱼");</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Program</div><div class="line">&#123;</div><div class="line">    static void Main(string[] args)</div><div class="line">    &#123;</div><div class="line">        IFlyable[] birds =  &#123;</div><div class="line">             new Magpie(),new Eagle()</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        foreach (var item in birds)</div><div class="line">        &#123;</div><div class="line">            item.Fly();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述main方法体内，若在IFlyable[]内实例化Penguin会报错，因为企鹅没有实现IFlyable接口。<br>接口的使用充分表现了多态的魅力，很好的体现了开闭原则，若新增加蝴蝶类，则通过实现IFlyable接口即可实现其Fly()的功能，而无需对原来的类进行修改。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/01/04/浅谈C#中多态的魅力（虚方法、抽象、接口实现）/" class="archive-article-date">
+  	<time datetime="2017-01-04T08:37:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-01-04</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/01/04/（转）.NET垃圾回收原理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          （转）.NET垃圾回收原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/04/C#接口和抽象类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C#接口和抽象类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

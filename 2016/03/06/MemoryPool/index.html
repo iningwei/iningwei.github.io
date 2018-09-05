@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>MemoryPool | iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MemoryPool">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MemoryPool">
+<meta property="og:url" content="https://iningwei.github.io/2016/03/06/MemoryPool/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="MemoryPool">
+<meta property="og:updated_time" content="2016-03-06T14:50:51.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MemoryPool">
+<meta name="twitter:description" content="MemoryPool">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-MemoryPool" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MemoryPool
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://pastebin.com/R8afbmVm" target="_blank" rel="external">http://pastebin.com/R8afbmVm</a></p>
+<pre><code>// MIT license - TL;DR - Do whatever you want with it, I&apos;m not liable for what you do with it!
+#define FAIL_FAST
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+/// &lt;summary&gt;
+/// &lt;para&gt;Used for memory recycling of reference types, like GameObjects&lt;/para&gt;
+/// &lt;para&gt;Example usage:&lt;/para&gt;
+/// &lt;para&gt;MemoryPool&lt;GameObject&gt; memPool = new MemoryPool&lt;GameObject&gt;(); // construction&lt;/para&gt;
+/// &lt;para&gt;memPool.Setup(
+///        ()    =&gt; Instantiate(prefab),
+///        (obj) =&gt; { obj.SetActive(true);  },
+///        (obj) =&gt; { obj.SetActive(false); },
+///        (obj) =&gt; { Object.Destroy(obj);  }
+/// );&lt;/para&gt;
+/// &lt;para&gt;GameObject gobj = memPool.Alloc();  // allocate object in pool&lt;/para&gt;
+/// &lt;para&gt;memPool.Free(gobj); // deallocate object in pool&lt;/para&gt;
+/// &lt;para&gt;MemoryPoolItem.Destroy(gobj); // deallocate object in pool OR Object.Destroy non-MemoryPool object (for GameObjects only)&lt;/para&gt;
+/// &lt;/summary&gt;
+public class MemoryPool&lt;T&gt; where T : class
+{
+private List&lt;T&gt; allObjects = null;
+private int freeObjectCount = 0;
+
+public delegate T DelegateBeginLife();
+public delegate void DelegateCommission(T obj);
+public delegate void DelegateDecommission(T obj);
+public delegate void DelegateEndLife(T obj);
+
+public DelegateBeginLife birth;
+public DelegateEndLife death;
+public DelegateCommission commission;
+public DelegateDecommission decommission;
+
+/// &lt;summary&gt;
+/// Example usage:
+/// &lt;para&gt;memPool.Setup(
+///        ()    =&gt; Instantiate(prefab),
+///        (obj) =&gt; obj.SetActive(true),
+///        (obj) =&gt; obj.SetActive(false),
+///        (obj) =&gt; Object.Destroy(obj)
+/// );&lt;/para&gt;
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;create&quot;&gt;callback function or delegate used to create a new object of type T&lt;/param&gt;
+/// &lt;param name=&quot;activate&quot;&gt;callback function or delegate used to activate an object of type T&lt;/param&gt;
+/// &lt;param name=&quot;deactivate&quot;&gt;callback function or delegate used to de-activate an object of type T&lt;/param&gt;
+/// &lt;param name=&quot;destroy&quot;&gt;callback function or delegate used to destroy an object of type T&lt;/param&gt;
+public void Setup(DelegateBeginLife create, DelegateCommission activate, DelegateDecommission deactivate, DelegateEndLife destroy)
+{
+    birth = create; commission = activate; decommission = deactivate; death = destroy;
+}
+
+/// &lt;summary&gt;Constructs and calls &lt;see cref=&quot;Setup&quot;/&gt;&lt;/summary&gt;
+public MemoryPool(DelegateBeginLife create, DelegateCommission activate, DelegateDecommission deactivate, DelegateEndLife destroy)
+{
+    Setup(create, activate, deactivate, destroy);
+}
+
+/// &lt;summary&gt; Be sure to call &lt;see cref=&quot;Setup&quot;/&gt;!&lt;/summary&gt;
+public MemoryPool() { }
+
+/// &lt;summary&gt;Returns an object from the memory pool, which may have just been created&lt;/summary&gt;
+public T Alloc()
+{
+    T freeObject = null;
+    if (freeObjectCount == 0)
+    {
+        #if FAIL_FAST
+        if (birth == null) { throw new System.Exception(&quot;Call .Setup(), and provide a create method!&quot;); }
+        #endif
+        if (allObjects == null) { allObjects = new List&lt;T&gt;(); }
+        freeObject = birth();
+        allObjects.Add(freeObject);
+        if (typeof(T) == typeof(GameObject))
+        {
+            GameObject go = freeObject as GameObject;
+            go.AddComponent&lt;MemoryPoolItem&gt;().SetPool(this as MemoryPool&lt;GameObject&gt;);
+        }
+    }
+    else
+    {
+        freeObject = allObjects[allObjects.Count - freeObjectCount];
+        freeObjectCount--;
+    }
+    if (commission != null) { commission(freeObject); }
+    return freeObject;
+}
+
+/// &lt;summary&gt;Which object to mark as free in the memory pool&lt;/summary&gt;
+public void Free(T obj)
+{
+    int indexOfObject = allObjects.IndexOf(obj);
+    #if FAIL_FAST
+    if (indexOfObject &lt; 0) { throw new System.Exception(&quot;woah, this isn&apos;t one of mine...&quot;); }
+    if (indexOfObject &gt;= (allObjects.Count - freeObjectCount)) { throw new System.Exception(&quot;hey, you&apos;re freeing this twice...&quot;); }
+    #endif
+    freeObjectCount++;
+    int beginningOfFreeList = allObjects.Count - freeObjectCount;
+    allObjects[indexOfObject] = allObjects[beginningOfFreeList];
+    allObjects[beginningOfFreeList] = obj;
+    if (decommission != null) { decommission(obj); }
+}
+
+/// &lt;summary&gt;performs the given delegate on each object in the memory pool&lt;/summary&gt;
+public void ForEach(DelegateCommission action)
+{
+    for (int i = 0; i &lt; allObjects.Count; ++i) { action(allObjects[i]); }
+}
+
+/// &lt;summary&gt;Destroys all objects in the pool, after deactivating each one.&lt;/summary&gt;
+public void DeallocateAll()
+{
+    ForEach((item) =&gt; decommission(item));
+    if (typeof(T) == typeof(GameObject))
+    {
+        ForEach((item) =&gt;
+        {
+            GameObject go = item as GameObject;
+            Object.DestroyImmediate(go.GetComponent&lt;MemoryPoolItem&gt;());
+        });
+    }
+    if (death != null) { ForEach((item) =&gt; death(item)); }
+    allObjects.Clear();
+}
+}
+
+public class MemoryPoolItem : MonoBehaviour
+{
+private MemoryPool&lt;GameObject&gt; gameObjectPool;
+public MemoryPoolItem SetPool(MemoryPool&lt;GameObject&gt; pool) { gameObjectPool = pool; return this; }
+static private bool shuttingDown = false;
+static public void SetShutdown(bool sceneIsEnding) { shuttingDown = sceneIsEnding; }
+#if FAIL_FAST
+void OnApplicationQuit() { SetShutdown(true); }
+void Start() { SetShutdown(false); }
+void OnDestroy()
+{
+    if (!shuttingDown) throw new System.Exception(&quot;Instead of Object.Destroy(&quot; + gameObject + &quot;), call MemoryPoolItem.Destroy(&quot; + gameObject + &quot;)\n&quot;+ &quot;When changing levels, call MemoryPoolItem.SetShutdown(true) first&quot;);
+}
+#endif
+public void FreeSelf() { gameObjectPool.Free(gameObject); }
+/// &lt;summary&gt;If the given GameObject belongs to a memory pool, mark it as free in that pool. Otherwise, Object.Destroy()&lt;/summary&gt;
+static public void Destroy(GameObject go)
+{
+    MemoryPoolItem i = go.GetComponent&lt;MemoryPoolItem&gt;();
+    if (i != null) { i.FreeSelf(); }
+    else { Object.Destroy(go); }
+}
+}
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/06/MemoryPool/" class="archive-article-date">
+  	<time datetime="2016-03-06T14:47:39.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-06</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/10/07/Unity3D 图片格式和出包大小之间的关系/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Unity3D 图片格式和出包大小之间的关系
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/06/Unity3D中的一些技巧总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Unity3D中的一些技巧总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

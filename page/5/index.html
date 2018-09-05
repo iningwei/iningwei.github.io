@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>iningwei的私家宅院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="测试description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iningwei的私家宅院">
+<meta property="og:url" content="https://iningwei.github.io/page/5/index.html">
+<meta property="og:site_name" content="iningwei的私家宅院">
+<meta property="og:description" content="测试description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iningwei的私家宅院">
+<meta name="twitter:description" content="测试description">
+  
+    <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/avatar img 256.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">iningwei</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">其实我是学地理的</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">iningwei</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/img/avatar img 256.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">iningwei</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">其实我是学地理的</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        
+  
+    <article id="post-使用NShader插件高亮Unity3D Shader文件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/使用NShader插件高亮Unity3D Shader文件/">使用NShader插件高亮Unity3D Shader文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文以Visual-Studio-2012版本为例，解决插件安装过程中遇到的问题。"><a href="#本文以Visual-Studio-2012版本为例，解决插件安装过程中遇到的问题。" class="headerlink" title="本文以Visual Studio 2012版本为例，解决插件安装过程中遇到的问题。"></a>本文以Visual Studio 2012版本为例，解决插件安装过程中遇到的问题。</h2><p>官网下载好插件，安装后，打开Unity3D创建的.Shader文件，发现并没有高亮。<br>按照提示：<br><strong>Remove the registry entry:</strong><br>HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\11.0\FontAndColors\Cache<br><strong>and</strong> HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\11.0_Config<br><strong>Remove all lines using “fx” or “hlsl” in file</strong> C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\VC\VC_Pkg_Core_Registration.pkgdef .<br>发现依旧不行。</p>
+<p>经过搜索，解决方法为：<br>在C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Extensions\34wgsmdv.olw目录下（PS:34wgsmdv.olw 这个目录可能各个机器不一样）的NShader.pkgdef文件的”CodeBase”=”$PackageFolder$\NShader.dll”这一句下面加入<br>[$RootKey$\Languages\File Extensions.shader]<br>@=”{4c554917-0eb7-3742-9f6b-f2f529fc6729}”<br>即，添加了对.shader后缀文件的支持。<br>上述步骤完成后，还要重新删除上述提到的两个注册表，否则依旧无法生效。</p>
+<p>另外，若机器安装了UnityVS,且设置了默认编辑器为UnityVS.OpenFile。这样双击.shader文件，VS界面是没有任何内容的。看来是UnityVS插件不支持.shader文件。因此打开.shader文件的时候需要手动更改Unity的编辑器为Visual Studio 2012。如下图所示：<br><img src="/img/SetVisualStudio2012.jpg" alt="SetVisualStudio2012.jpg"></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/使用NShader插件高亮Unity3D Shader文件/" class="archive-article-date">
+  	<time datetime="2015-08-17T14:07:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NShader/">NShader</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shader/">Shader</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/软件安装/">软件安装</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-小众软件汇总" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/小众软件汇总/">小众软件汇总</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"><a href="#本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。" class="headerlink" title="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"></a>本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。</h2><h1 id="Win-PC"><a href="#Win-PC" class="headerlink" title="Win PC"></a>Win PC</h1><h2 id="文档阅读"><a href="#文档阅读" class="headerlink" title="文档阅读"></a>文档阅读</h2><h3 id="Sumatrapdf"><a href="#Sumatrapdf" class="headerlink" title="Sumatrapdf"></a>Sumatrapdf</h3><p>Sumatra PDF is a free PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, Comic Book (CBZ and CBR) reader for Windows.<br>Sumatra PDF is powerful, small, portable and starts up very fast.<br>Simplicity of the user interface has a high priority.</p>
+<h2 id="文本工具"><a href="#文本工具" class="headerlink" title="文本工具"></a>文本工具</h2><h3 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad++"></a>Notepad++</h3><h2 id="文本比较工具"><a href="#文本比较工具" class="headerlink" title="文本比较工具"></a>文本比较工具</h2><h3 id="Araxis-merge"><a href="#Araxis-merge" class="headerlink" title="Araxis merge"></a>Araxis merge</h3><p>Araxis merge是一款很优秀的文本比较工具，可以替代svn自带的比较工具。</p>
+<h2 id="文本内容查找工具"><a href="#文本内容查找工具" class="headerlink" title="文本内容查找工具"></a>文本内容查找工具</h2><h3 id="grepWin"><a href="#grepWin" class="headerlink" title="grepWin"></a>grepWin</h3><h2 id="cmd命令行工具"><a href="#cmd命令行工具" class="headerlink" title="cmd命令行工具"></a>cmd命令行工具</h2><h3 id="PowerCmd"><a href="#PowerCmd" class="headerlink" title="PowerCmd"></a>PowerCmd</h3><h2 id="图片查看工具"><a href="#图片查看工具" class="headerlink" title="图片查看工具"></a>图片查看工具</h2><h3 id="XnView"><a href="#XnView" class="headerlink" title="XnView"></a>XnView</h3><h3 id="sagethumb"><a href="#sagethumb" class="headerlink" title="sagethumb"></a>sagethumb</h3><p>这是一款很有用的图片查看工具，它是开源的，且作者是XnView的作者。<br>安装它后最大的作用是可以预览TGA、PSD文件，再也不用找专用的图片浏览器来一睹庐山。另外右键图片还可以查看图片的分辨率、大小、深度等常用信息。<br>下载地址：<a href="https://code.google.com/p/sagethumbs/" target="_blank" rel="external">https://code.google.com/p/sagethumbs/</a><br>(20150920更新：下载地址更新为<a href="http://www.cherubicsoft.com/en/projects/sagethumbs/" target="_blank" rel="external">http://www.cherubicsoft.com/en/projects/sagethumbs/</a>)</p>
+<h2 id="录屏工具"><a href="#录屏工具" class="headerlink" title="录屏工具"></a>录屏工具</h2><h3 id="fraps"><a href="#fraps" class="headerlink" title="fraps"></a>fraps</h3><p>目前个人遇到的最完美的游戏录屏工具，可以完美录全屏。<br>使用方法：启动软件，当进入游戏或者全屏软件后，左上角会有绿色数字，这个是帧率。按下录屏快捷键，绿色数字变成红色数字，再按一下录屏快捷键则停止录制，文件保存在默认路径下。<br>优点：可以设置帧率，而且基本不会丢帧。<br>缺点：默认存储格式为avi,而且文件很大。需要用格式转换软件处理一下，以降低容量。  </p>
+<h3 id="FlashBack"><a href="#FlashBack" class="headerlink" title="FlashBack"></a>FlashBack</h3><p>优点：可以录制区域，可以转换为多种格式，包括gif。<br>缺点：丢帧很严重，全屏的游戏或者全屏软件无法录制，会出现黑屏、花屏现象。</p>
+<h3 id="Camtasia-Studio"><a href="#Camtasia-Studio" class="headerlink" title="Camtasia Studio"></a>Camtasia Studio</h3><p>默认全屏录，帧率没有测试。缺点是全屏模式下的游戏以及软件无法录制。</p>
+<h3 id="Snagit"><a href="#Snagit" class="headerlink" title="Snagit"></a>Snagit</h3><p>优点：可以设置帧率，支持区域录制。<br>缺点：丢帧严重，不支持游戏和软件的全屏录制。<br>同Camtasia Studio，Snagit也是由TechSmith开发。</p>
+<h2 id="视频格式转换"><a href="#视频格式转换" class="headerlink" title="视频格式转换"></a>视频格式转换</h2><h3 id="格式工厂"><a href="#格式工厂" class="headerlink" title="格式工厂"></a>格式工厂</h3><p>缺点：不支持ogg格式</p>
+<h3 id="在线转换网站-http-www-online-convert-com"><a href="#在线转换网站-http-www-online-convert-com" class="headerlink" title="在线转换网站 http://www.online-convert.com"></a>在线转换网站 <a href="http://www.online-convert.com" target="_blank" rel="external">http://www.online-convert.com</a></h3><p>提供音频、视频、图片等等各种转换。<br>可提供ogg格式转换。<br>缺点：在线转换的缘故，因此速度比较慢。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/小众软件汇总/" class="archive-article-date">
+  	<time datetime="2015-08-17T13:57:31.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小众软件/">小众软件</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/沙里淘金/">沙里淘金</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Win7-firefox安装firebug失败" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/Win7-firefox安装firebug失败/">Win7 firefox安装firebug失败</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>试了使用代理，以及用不同版本的firebug、firefox，都无法安装成功。</p>
+<h1 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h1><p>在hosts文件下添加如下两行：<br>117.18.232.191 mozorg.cdn.mozilla.net<br>117.18.232.191 addons.cdn.mozilla.net<br>然后再安装，即可。</p>
+<h1 id="查考文档："><a href="#查考文档：" class="headerlink" title="查考文档："></a>查考文档：</h1><p><a href="http://jingyan.baidu.com/article/47a29f2410f331c01423999e.html" target="_blank" rel="external">http://jingyan.baidu.com/article/47a29f2410f331c01423999e.html</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/Win7-firefox安装firebug失败/" class="archive-article-date">
+  	<time datetime="2015-08-17T13:51:04.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件安装/">软件安装</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-BlueStacks安装apk" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/BlueStacks安装apk/">BlueStacks安装apk</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一般情况下，安装了BlueStacks后，右键apk会找到用BlueStacks进行安装的快捷方式，但是有时候会遇到没有关联上的情况。<br>这样的话，可以在安装目录（C:\Program Files\BlueStacks）找到HD-ApkHandler.exe，然后拖拽apk到HD-ApkHandler.exe的图标上即可安装。<br>也可以右键apk-&gt;打开方式-&gt;找到HD-ApkHandler.exe。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/BlueStacks安装apk/" class="archive-article-date">
+  	<time datetime="2015-08-17T13:41:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件安装/">软件安装</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Win7-根据字符搜索文件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/Win7-根据字符搜索文件/">Win7 根据字符搜索文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一步：打开控制面板<br>第二步：选择文件夹选项<br>第三步：将搜索内容该为“始终搜索文件名和内容”<br>然后点击应用、确定，即可。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/Win7-根据字符搜索文件/" class="archive-article-date">
+  	<time datetime="2015-08-17T13:37:01.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统使用/">操作系统使用</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/奇淫技巧/">奇淫技巧</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-法向量从模型坐标系转换到世界坐标系" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/17/法向量从模型坐标系转换到世界坐标系/">法向量从模型坐标系转换到世界坐标系</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"><a href="#本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。" class="headerlink" title="本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。"></a>本文为bbbbbbion（可以叫我六饼）原创总结，如有疏漏请各位拍砖留言。转载请尊重原作者成果，保留出处。</h2><h1 id="1：前导知识"><a href="#1：前导知识" class="headerlink" title="1：前导知识"></a>1：前导知识</h1><p>众所周知Unity3D shader中，把模型的顶点坐标从模型坐标系转换到世界坐标系的方法为:<br>float4 worldPos=mul(_Object2World,input.vertex);<br>由于Unity3D shader中向量默认为列向量，所以上述等式右乘矩阵。<br>另外有_Object2World和_World2Object互为逆矩阵。<br>求一个矩阵M的转置矩阵，可以使用transpos()方法：M<sup>T</sup>=transpos(M);  </p>
+<h1 id="2：法向量的不同之处"><a href="#2：法向量的不同之处" class="headerlink" title="2：法向量的不同之处"></a>2：法向量的不同之处</h1><p>脑补一下，法向量可以看成是由两个点组成的，因此在进行矩阵变换的时候若涉及到缩放变换，则会导致法向量不再垂直于物体表面。<br>因此我们不能使用float4 worldNormal=mul(_Object2World,float4(normal.xyz,0.0))来求得法向量的世界坐标。</p>
+<h1 id="3：正确的方法"><a href="#3：正确的方法" class="headerlink" title="3：正确的方法"></a>3：正确的方法</h1><h2 id="3-1：公式推导"><a href="#3-1：公式推导" class="headerlink" title="3.1：公式推导"></a>3.1：公式推导</h2><p>假定使用列向量。<br>设一个通过原点的面的法向量为<strong>n</strong>,面上面的非原点处的点p(点p和原点构成向量<strong>p</strong>),点转换到世界坐标的转换矩阵为<strong>M</strong>,待求的转换矩阵<strong>X</strong>为把法向量转换到世界坐标的矩阵。<br>则有<strong>p</strong>.<strong>n</strong><sup>T</sup>=0<br>可知对法向量进行转换后仍然垂直于经过M转换的p向量：Mp.(Xn)<sup>T</sup>=0 =&gt; Mpn<sup>T</sup>X<sup>T</sup><br>=0<br>所以有MX<sup>T</sup>=I =&gt; X=(M<sup>-1</sup>)<sup>T</sup><br>即，待求的转换矩阵为点转换矩阵M的转置逆矩阵。  </p>
+<h2 id="3-2：Unity3D中应用"><a href="#3-2：Unity3D中应用" class="headerlink" title="3.2：Unity3D中应用"></a>3.2：Unity3D中应用</h2><p>由上述推导可知，法线的世界坐标=mul(((_Object2World)<sup>-1</sup>)<sup>T</sup>,float4(normal,0.0))。<br>由于向量右乘矩阵等于左乘矩阵的转置。可得:<br>worldNormal=mul(float4(normal.xyz,0.0),_World2Object);</p>
+<h1 id="4-参考文档"><a href="#4-参考文档" class="headerlink" title="4:参考文档"></a>4:参考文档</h1><ul>
+<li><p><a href="http://www.cnblogs.com/qzzlw/archive/2012/10/23/2736277.html" target="_blank" rel="external">http://www.cnblogs.com/qzzlw/archive/2012/10/23/2736277.html</a>  </p>
+</li>
+<li><p><a href="https://en.wikibooks.org/wiki/Cg_Programming/Vector_and_Matrix_Operations" target="_blank" rel="external">https://en.wikibooks.org/wiki/Cg_Programming/Vector_and_Matrix_Operations</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/08/17/法向量从模型坐标系转换到世界坐标系/" class="archive-article-date">
+  	<time datetime="2015-08-17T07:51:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shader/">Shader</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cg/">cg</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
+  
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 iningwei
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/3DSMax/" style="font-size: 10px;">3DSMax</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 16px;">C#</a> <a href="/tags/NShader/" style="font-size: 10px;">NShader</a> <a href="/tags/Shader/" style="font-size: 12px;">Shader</a> <a href="/tags/Unity3D/" style="font-size: 20px;">Unity3D</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/cg/" style="font-size: 18px;">cg</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/ulua/" style="font-size: 10px;">ulua</a> <a href="/tags/反射/" style="font-size: 10px;">反射</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/小众软件/" style="font-size: 10px;">小众软件</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/操作系统使用/" style="font-size: 10px;">操作系统使用</a> <a href="/tags/数据结构与算法/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/沙里淘金/" style="font-size: 10px;">沙里淘金</a> <a href="/tags/热更新/" style="font-size: 12px;">热更新</a> <a href="/tags/编辑器扩展/" style="font-size: 10px;">编辑器扩展</a> <a href="/tags/视频/" style="font-size: 10px;">视频</a> <a href="/tags/软件安装/" style="font-size: 14px;">软件安装</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
