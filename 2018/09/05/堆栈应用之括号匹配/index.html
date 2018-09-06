@@ -4,25 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>解决Unity3D打包android连接不上adb的问题 | iningwei的私家宅院</title>
+  <title>堆栈应用之括号匹配 | iningwei的私家宅院</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决Unity3D打包android连接不上adb的问题">
+  <meta name="description" content="堆栈应用之括号匹配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决Unity3D打包android连接不上adb的问题">
-<meta property="og:url" content="https://iningwei.github.io/2015/09/28/解决Unity3D打包android连接不上adb的问题/index.html">
+<meta property="og:title" content="堆栈应用之括号匹配">
+<meta property="og:url" content="https://iningwei.github.io/2018/09/05/堆栈应用之括号匹配/index.html">
 <meta property="og:site_name" content="iningwei的私家宅院">
-<meta property="og:description" content="解决Unity3D打包android连接不上adb的问题">
-<meta property="og:image" content="https://iningwei.github.io/img/publish android error.png">
-<meta property="og:image" content="https://iningwei.github.io/img/all port.png">
-<meta property="og:image" content="https://iningwei.github.io/img/serch port 5037.png">
-<meta property="og:image" content="https://iningwei.github.io/img/task manager PID.png">
-<meta property="og:image" content="https://iningwei.github.io/img/tasklist find process.png">
-<meta property="og:image" content="https://iningwei.github.io/img/taskkill force.png">
-<meta property="og:updated_time" content="2015-09-30T15:38:51.753Z">
+<meta property="og:description" content="堆栈应用之括号匹配">
+<meta property="og:updated_time" content="2018-09-06T13:41:36.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决Unity3D打包android连接不上adb的问题">
-<meta name="twitter:description" content="解决Unity3D打包android连接不上adb的问题">
-<meta name="twitter:image" content="https://iningwei.github.io/img/publish android error.png">
+<meta name="twitter:title" content="堆栈应用之括号匹配">
+<meta name="twitter:description" content="堆栈应用之括号匹配">
   
     <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
   
@@ -150,7 +143,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-解决Unity3D打包android连接不上adb的问题" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-堆栈应用之括号匹配" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -160,7 +153,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      解决Unity3D打包android连接不上adb的问题
+      堆栈应用之括号匹配
     </h1>
   
 
@@ -168,32 +161,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1：前言"><a href="#1：前言" class="headerlink" title="1：前言"></a>1：前言</h1><p>打包android，报错(Unable to kill the adb server.Please make sure the Android SDK is installed and is properly configured in the Editor……),具体如下图所示：<br><img src="/img/publish android error.png" alt="Unity3D打包android报错详情">  </p>
-<h1 id="2-必备知识和解决方案"><a href="#2-必备知识和解决方案" class="headerlink" title="2:必备知识和解决方案"></a>2:必备知识和解决方案</h1><h2 id="2-1-5037端口"><a href="#2-1-5037端口" class="headerlink" title="2.1 5037端口"></a>2.1 5037端口</h2><p>adb的默认端口是5037</p>
-<h2 id="2-2-如何查看指定端口被哪个进程占用"><a href="#2-2-如何查看指定端口被哪个进程占用" class="headerlink" title="2.2 如何查看指定端口被哪个进程占用"></a>2.2 如何查看指定端口被哪个进程占用</h2><h3 id="2-2-1-查看当前进程所有占用端口"><a href="#2-2-1-查看当前进程所有占用端口" class="headerlink" title="2.2.1 查看当前进程所有占用端口"></a>2.2.1 查看当前进程所有占用端口</h3><p>命令:netstat -ano<br><img src="/img/all port.png" alt="查看进程占用的所有端口"><br>如上图最后一列PID，即Process ID(进程标识ID)。  </p>
-<h3 id="2-2-2-查看具体某个端口号是否被占用"><a href="#2-2-2-查看具体某个端口号是否被占用" class="headerlink" title="2.2.2 查看具体某个端口号是否被占用"></a>2.2.2 查看具体某个端口号是否被占用</h3><p>命令:netstat -ano|findstr “XXXX”<br><img src="/img/serch port 5037.png" alt="查看具体某个端口是否被占用"><br>如上图22056即为占用5037端口的进程的PID。  </p>
-<h3 id="2-2-3-根据PID找到进程"><a href="#2-2-3-根据PID找到进程" class="headerlink" title="2.2.3 根据PID找到进程"></a>2.2.3 根据PID找到进程</h3><p>有了PID，可以在任务管理器找到对应的进程，如下图：<br><img src="/img/task manager PID.png" alt="任务管理器查找PID对应的进程">  </p>
-<p>也可以使用命令:tasklist|findstr “XXXX”,如下图：<br><img src="/img/tasklist find process.png" alt="通过cmd命令查找PID对应的进程"><br>（注意，命令tasklist可以获得当前所有的进程）</p>
-<h3 id="2-2-4-关闭进程"><a href="#2-2-4-关闭进程" class="headerlink" title="2.2.4 关闭进程"></a>2.2.4 关闭进程</h3><p>命令：taskkill/pid XXXX<br>有时候需要/f 强制关闭。即：taskkill/pid xxxx/f,如下图。<br><img src="/img/taskkill force.png" alt="使用命令关闭指定PID的进程">  </p>
-<h1 id="3-特殊情况"><a href="#3-特殊情况" class="headerlink" title="3:特殊情况"></a>3:特殊情况</h1><p>有时候占用adb的进程怎么都关闭不了，比如金山手机助手的进程sjk_daemon.exe,该进程会占用5037端口，且关闭后不一会儿又重启，很是恼火。无奈只有卸载金山毒霸（金山助手是集成在毒霸内的，日它仙人了~）</p>
-
+        <p>括号匹配问题是计算机程序设计中常见的问题，这里为简化，假设表达式中只有两种括号：圆括号和方括号。</p>
+<h2 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h2><p>步骤1：从括号序列中取第一个括号，分为三种情况：<br>a) 如果栈为空，则将括号入栈<br>b) 如果括号与栈顶的括号匹配，则将栈顶括号出栈<br>c) 如果括号与栈顶的括号不匹配，则将括号入栈</p>
+<p>步骤2：最终，如果栈为空的话，则匹配，否则不匹配。</p>
+<h2 id="C-算法实现"><a href="#C-算法实现" class="headerlink" title="C#算法实现"></a>C#算法实现</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></div><div class="line">&#123;</div><div class="line">    Console.WriteLine(<span class="string">"enter   brackets:"</span>);</div><div class="line">    <span class="keyword">string</span> brackets = Console.ReadLine();</div><div class="line">    Console.WriteLine(<span class="string">"括号是否匹配："</span> + MarchBrackets(brackets.ToCharArray()));</div><div class="line">    Console.ReadLine();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">MarchBrackets</span>(<span class="params"><span class="keyword">char</span>[] brackets</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (brackets == <span class="literal">null</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//<span class="doctag">TODO:</span>Log error</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    Stack&lt;<span class="keyword">char</span>&gt; s = <span class="keyword">new</span> Stack&lt;<span class="keyword">char</span>&gt;();</div><div class="line"></div><div class="line">    <span class="keyword">int</span> count = brackets.Length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (s.Count == <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            Console.WriteLine(<span class="string">"压入："</span> + brackets[i]);</div><div class="line">            s.Push(brackets[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> ((s.Peek() == <span class="string">'('</span> &amp;&amp; brackets[i] == <span class="string">')'</span>) ||</div><div class="line">                (s.Peek() == <span class="string">'['</span> &amp;&amp; brackets[i] == <span class="string">']'</span>))</div><div class="line">            &#123;</div><div class="line">                Console.WriteLine(<span class="string">"压出："</span> + brackets[i]);</div><div class="line">                s.Pop();</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                Console.WriteLine(<span class="string">"压入："</span> + brackets[i]);</div><div class="line">                s.Push(brackets[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    Console.WriteLine(<span class="string">"最终堆栈内数量："</span> + s.Count);</div><div class="line">    <span class="keyword">if</span> (s.Count == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2015/09/28/解决Unity3D打包android连接不上adb的问题/" class="archive-article-date">
-  	<time datetime="2015-09-28T10:55:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-28</time>
+      <a href="/2018/09/05/堆栈应用之括号匹配/" class="archive-article-date">
+  	<time datetime="2018-09-05T14:35:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2018-09-05</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/堆栈/">堆栈</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	<a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a>
 	</div>
 
 
@@ -205,18 +193,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2015/09/30/解决Unity3D离线文档打开缓慢的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/05/堆栈应用之进制转换/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          解决Unity3D离线文档打开缓慢的问题
+          堆栈应用之进制转换
         
       </div>
     </a>
   
   
-    <a href="/2015/09/23/安卓adb命令及结合Unity3D的使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">安卓adb命令及结合Unity3D的使用</div>
+    <a href="/2017/01/04/（转）.NET垃圾回收原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">（转）.NET垃圾回收原理</div>
       <i class="icon-circle-right"></i>
     </a>
   

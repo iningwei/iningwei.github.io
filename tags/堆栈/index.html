@@ -4,25 +4,17 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>解决Unity3D打包android连接不上adb的问题 | iningwei的私家宅院</title>
+  <title>Tag: 堆栈 | iningwei的私家宅院</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决Unity3D打包android连接不上adb的问题">
-<meta property="og:type" content="article">
-<meta property="og:title" content="解决Unity3D打包android连接不上adb的问题">
-<meta property="og:url" content="https://iningwei.github.io/2015/09/28/解决Unity3D打包android连接不上adb的问题/index.html">
+  <meta name="description" content="测试description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iningwei的私家宅院">
+<meta property="og:url" content="https://iningwei.github.io/tags/堆栈/index.html">
 <meta property="og:site_name" content="iningwei的私家宅院">
-<meta property="og:description" content="解决Unity3D打包android连接不上adb的问题">
-<meta property="og:image" content="https://iningwei.github.io/img/publish android error.png">
-<meta property="og:image" content="https://iningwei.github.io/img/all port.png">
-<meta property="og:image" content="https://iningwei.github.io/img/serch port 5037.png">
-<meta property="og:image" content="https://iningwei.github.io/img/task manager PID.png">
-<meta property="og:image" content="https://iningwei.github.io/img/tasklist find process.png">
-<meta property="og:image" content="https://iningwei.github.io/img/taskkill force.png">
-<meta property="og:updated_time" content="2015-09-30T15:38:51.753Z">
+<meta property="og:description" content="测试description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决Unity3D打包android连接不上adb的问题">
-<meta name="twitter:description" content="解决Unity3D打包android连接不上adb的问题">
-<meta name="twitter:image" content="https://iningwei.github.io/img/publish android error.png">
+<meta name="twitter:title" content="iningwei的私家宅院">
+<meta name="twitter:description" content="测试description">
   
     <link rel="alternative" href="/atom.xml" title="iningwei的私家宅院" type="application/atom+xml">
   
@@ -150,105 +142,96 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-解决Unity3D打包android连接不上adb的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      解决Unity3D打包android连接不上adb的问题
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/09/05/堆栈应用之括号匹配/" class="archive-article-date">
+  	<time datetime="2018-09-05T14:35:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2018-09-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/09/05/堆栈应用之括号匹配/">堆栈应用之括号匹配</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1：前言"><a href="#1：前言" class="headerlink" title="1：前言"></a>1：前言</h1><p>打包android，报错(Unable to kill the adb server.Please make sure the Android SDK is installed and is properly configured in the Editor……),具体如下图所示：<br><img src="/img/publish android error.png" alt="Unity3D打包android报错详情">  </p>
-<h1 id="2-必备知识和解决方案"><a href="#2-必备知识和解决方案" class="headerlink" title="2:必备知识和解决方案"></a>2:必备知识和解决方案</h1><h2 id="2-1-5037端口"><a href="#2-1-5037端口" class="headerlink" title="2.1 5037端口"></a>2.1 5037端口</h2><p>adb的默认端口是5037</p>
-<h2 id="2-2-如何查看指定端口被哪个进程占用"><a href="#2-2-如何查看指定端口被哪个进程占用" class="headerlink" title="2.2 如何查看指定端口被哪个进程占用"></a>2.2 如何查看指定端口被哪个进程占用</h2><h3 id="2-2-1-查看当前进程所有占用端口"><a href="#2-2-1-查看当前进程所有占用端口" class="headerlink" title="2.2.1 查看当前进程所有占用端口"></a>2.2.1 查看当前进程所有占用端口</h3><p>命令:netstat -ano<br><img src="/img/all port.png" alt="查看进程占用的所有端口"><br>如上图最后一列PID，即Process ID(进程标识ID)。  </p>
-<h3 id="2-2-2-查看具体某个端口号是否被占用"><a href="#2-2-2-查看具体某个端口号是否被占用" class="headerlink" title="2.2.2 查看具体某个端口号是否被占用"></a>2.2.2 查看具体某个端口号是否被占用</h3><p>命令:netstat -ano|findstr “XXXX”<br><img src="/img/serch port 5037.png" alt="查看具体某个端口是否被占用"><br>如上图22056即为占用5037端口的进程的PID。  </p>
-<h3 id="2-2-3-根据PID找到进程"><a href="#2-2-3-根据PID找到进程" class="headerlink" title="2.2.3 根据PID找到进程"></a>2.2.3 根据PID找到进程</h3><p>有了PID，可以在任务管理器找到对应的进程，如下图：<br><img src="/img/task manager PID.png" alt="任务管理器查找PID对应的进程">  </p>
-<p>也可以使用命令:tasklist|findstr “XXXX”,如下图：<br><img src="/img/tasklist find process.png" alt="通过cmd命令查找PID对应的进程"><br>（注意，命令tasklist可以获得当前所有的进程）</p>
-<h3 id="2-2-4-关闭进程"><a href="#2-2-4-关闭进程" class="headerlink" title="2.2.4 关闭进程"></a>2.2.4 关闭进程</h3><p>命令：taskkill/pid XXXX<br>有时候需要/f 强制关闭。即：taskkill/pid xxxx/f,如下图。<br><img src="/img/taskkill force.png" alt="使用命令关闭指定PID的进程">  </p>
-<h1 id="3-特殊情况"><a href="#3-特殊情况" class="headerlink" title="3:特殊情况"></a>3:特殊情况</h1><p>有时候占用adb的进程怎么都关闭不了，比如金山手机助手的进程sjk_daemon.exe,该进程会占用5037端口，且关闭后不一会儿又重启，很是恼火。无奈只有卸载金山毒霸（金山助手是集成在毒霸内的，日它仙人了~）</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/09/28/解决Unity3D打包android连接不上adb的问题/" class="archive-article-date">
-  	<time datetime="2015-09-28T10:55:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-09-28</time>
-</a>
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity3D/">Unity3D</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/堆栈/">堆栈</a></li></ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/查漏补缺/">查漏补缺</a>
+	<a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a>
 	</div>
 
 
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/09/05/堆栈应用之进制转换/" class="archive-article-date">
+  	<time datetime="2018-09-05T14:35:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2018-09-05</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2015/09/30/解决Unity3D离线文档打开缓慢的问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          解决Unity3D离线文档打开缓慢的问题
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/09/05/堆栈应用之进制转换/">堆栈应用之进制转换</a>
+    </h1>
   
-  
-    <a href="/2015/09/23/安卓adb命令及结合Unity3D的使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">安卓adb命令及结合Unity3D的使用</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/堆栈/">堆栈</a></li></ul>
 	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
+
+          
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a>
+	</div>
 
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
-
-
-
-
+    
 
 
       </div>
@@ -271,9 +254,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
